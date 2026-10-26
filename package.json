@@ -1,11 +1,12 @@
 {
-  "name": "earth-intelligence-platform",
-  "version": "1.0.0",
+  "name": "earth-intelligence",
+  "version": "3.0.0",
   "private": true,
-  "description": "Forest Eyes + River Eyes + Hazard Lens: global environmental hazard screening with Gemma 4",
+  "description": "Earth Intelligence: Evidence-driven environmental intelligence, geospatial observation, hydrological monitoring, and natural hazard assessment",
   "main": "backend/server.js",
   "scripts": {
     "start": "node --max-old-space-size=256 backend/server.js",
+    "test": "node backend/test/test-server.js",
     "export-datasets": "node backend/scripts/export-datasets.js"
   },
   "engines": {

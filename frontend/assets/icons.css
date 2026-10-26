@@ -1,0 +1,40 @@
+/**
+ * Earth Intelligence — Icon Styling Tokens
+ */
+.ei-icon {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+
+.ei-icon-sm {
+  width: 14px;
+  height: 14px;
+}
+
+.ei-icon-md {
+  width: 18px;
+  height: 18px;
+}
+
+.ei-icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+.ei-icon-xl {
+  width: 32px;
+  height: 32px;
+}
+
+.ei-icon.spin {
+  animation: ei-spin 1.2s linear infinite;
+}
+
+@keyframes ei-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
