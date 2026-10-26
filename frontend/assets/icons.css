@@ -2,7 +2,18 @@
  * Earth Intelligence — Icon Styling Tokens & Visual Geometry
  * ==========================================================
  * Standards for precision vector alignment, optical sizing, and status states.
+ * Colors adhere strictly to the Earth Intelligence Cartographic Palette.
  */
+:root {
+  --ei-ink: #171916;
+  --ei-forest: #254735;
+  --ei-field: #59745C;
+  --ei-paper: #F0E9DC;
+  --ei-mineral: #D7D3C7;
+  --ei-orange: #D96B43;
+  --ei-grey: #85877F;
+}
+
 .ei-icon {
   display: inline-flex;
   align-items: center;
@@ -11,7 +22,7 @@
   height: 1.15em;
   vertical-align: -0.15em;
   flex-shrink: 0;
-  stroke-width: 1.75;
+  stroke-width: 1.65;
   transition: transform 0.2s ease, stroke 0.2s ease, opacity 0.2s ease;
 }
 
@@ -22,14 +33,23 @@
 .ei-icon-lg { width: 24px; height: 24px; }
 .ei-icon-xl { width: 32px; height: 32px; }
 
-/* Thematic Color Utility Overrides */
-.ei-icon-emerald { color: #10b981; }
-.ei-icon-cyan    { color: #06b6d4; }
-.ei-icon-sky     { color: #38bdf8; }
-.ei-icon-amber   { color: #fbbf24; }
-.ei-icon-rose    { color: #f43f5e; }
-.ei-icon-muted   { color: #94a3b8; }
-.ei-icon-dim     { color: #64748b; }
+/* Thematic Color Utility Overrides — Earth Intelligence Palette */
+.ei-icon-ink     { color: #171916; }
+.ei-icon-forest  { color: #254735; }
+.ei-icon-field   { color: #59745C; }
+.ei-icon-paper   { color: #F0E9DC; }
+.ei-icon-mineral { color: #D7D3C7; }
+.ei-icon-orange  { color: #D96B43; }
+.ei-icon-grey    { color: #85877F; }
+
+/* Backward Compatibility Aliases for Legacy Template Classes */
+.ei-icon-emerald { color: #59745C; }
+.ei-icon-cyan    { color: #254735; }
+.ei-icon-sky     { color: #85877F; }
+.ei-icon-amber   { color: #D96B43; }
+.ei-icon-rose    { color: #D96B43; }
+.ei-icon-muted   { color: #85877F; }
+.ei-icon-dim     { color: #85877F; }
 
 /* Status & Interaction States */
 .ei-icon.spin {
@@ -47,5 +67,5 @@
 
 @keyframes ei-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.45; transform: scale(0.92); }
+  50%      { opacity: 0.55; transform: scale(0.94); }
 }

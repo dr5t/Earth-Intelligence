@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Tile Base: Warm Paper with Solid Ink Contour -->
+  <rect x="2" y="2" width="44" height="44" rx="8" fill="#F0E9DC" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Limnological Cuvette / Water Column Tube -->
+  <rect x="14" y="8" width="20" height="32" rx="3" fill="#D7D3C7" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Stratified Turbidity Layers -->
+  <rect x="14" y="8" width="20" height="10" fill="#59745C" fill-opacity="0.2"/>
+  <rect x="14" y="18" width="20" height="11" fill="#254735" fill-opacity="0.3"/>
+  <rect x="14" y="29" width="20" height="11" fill="#171916" fill-opacity="0.2"/>
+  
+  <line x1="14" y1="18" x2="34" y2="18" stroke="#171916" stroke-width="1.5"/>
+  <line x1="14" y1="29" x2="34" y2="29" stroke="#171916" stroke-width="1.5" stroke-dasharray="2 2"/>
+  
+  <!-- Radiometric Wave Spectral Reticle (665nm / 842nm) -->
+  <path d="M18 13c2-1 4 1 6 0s4-1 6 0" stroke="#59745C" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M18 24c2-1 4 1 6 0s4-1 6 0" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Signal Orange Chlorophyll-a / NDCI Anomaly Marker -->
+  <circle cx="28" cy="24" r="3.5" fill="#D96B43" stroke="#171916" stroke-width="1.5"/>
+  <circle cx="28" cy="24" r="1" fill="#F0E9DC"/>
+</svg>

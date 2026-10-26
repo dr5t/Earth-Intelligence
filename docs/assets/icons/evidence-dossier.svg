@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Tile Base: Warm Paper with Solid Ink Contour -->
+  <rect x="2" y="2" width="44" height="44" rx="8" fill="#F0E9DC" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Forensic Brief Dossier Folio Sheet -->
+  <path d="M12 9h16l8 8v22H12V9z" fill="#D7D3C7" stroke="#171916" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M28 9v8h8" stroke="#171916" stroke-width="1.75" stroke-linejoin="round"/>
+  
+  <!-- Evidentiary Survey Records / Checklist Filaments -->
+  <line x1="17" y1="18" x2="24" y2="18" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="17" y1="23" x2="31" y2="23" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="17" y1="28" x2="27" y2="28" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="17" y1="33" x2="22" y2="33" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Coordinate Registration Crosshair Reticle (Upper Corner) -->
+  <circle cx="8" cy="8" r="3" stroke="#85877F" stroke-width="1"/>
+  <line x1="8" y1="4" x2="8" y2="12" stroke="#85877F" stroke-width="1"/>
+  <line x1="4" y1="8" x2="12" y2="8" stroke="#85877F" stroke-width="1"/>
+  
+  <!-- Signal Orange Provenance Certification Seal -->
+  <circle cx="31" cy="33" r="4.5" fill="#D96B43" stroke="#171916" stroke-width="1.5"/>
+  <path d="M29 33l1.5 1.5 3-3" stroke="#F0E9DC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

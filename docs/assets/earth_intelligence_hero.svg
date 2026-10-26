@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" width="1100" height="360" fill="none">
+  <defs>
+    <style>
+      .hero-title { font-family: 'Outfit', -apple-system, sans-serif; font-weight: 900; font-size: 40px; fill: #171916; letter-spacing: 0.04em; }
+      .hero-tagline { font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 15px; fill: #254735; font-style: italic; letter-spacing: 0.02em; }
+      .hero-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #59745C; letter-spacing: 0.06em; text-transform: uppercase; }
+      .hero-pill-text { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 600; fill: #171916; }
+      .hero-feat-title { font-family: 'Outfit', -apple-system, sans-serif; font-weight: 700; font-size: 12.5px; fill: #171916; }
+      .hero-feat-desc { font-family: 'Inter', -apple-system, sans-serif; font-size: 10.5px; fill: #59745C; }
+      .carto-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #85877F; }
+    </style>
+  </defs>
+
+  <!-- 1. Warm Paper Base Substrate -->
+  <rect x="0" y="0" width="1100" height="360" fill="#F0E9DC"/>
+
+  <!-- 2. Technical Border & Graticule Frame -->
+  <rect x="14" y="14" width="1072" height="332" fill="none" stroke="#171916" stroke-width="2.2"/>
+  <rect x="20" y="20" width="1060" height="320" fill="none" stroke="#85877F" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Corner Surveyor Registration Crosshairs -->
+  <line x1="8" y1="14" x2="20" y2="14" stroke="#171916" stroke-width="1.5"/>
+  <line x1="14" y1="8" x2="14" y2="20" stroke="#171916" stroke-width="1.5"/>
+  <line x1="1080" y1="14" x2="1092" y2="14" stroke="#171916" stroke-width="1.5"/>
+  <line x1="1086" y1="8" x2="1086" y2="20" stroke="#171916" stroke-width="1.5"/>
+  <line x1="8" y1="346" x2="20" y2="346" stroke="#171916" stroke-width="1.5"/>
+  <line x1="14" y1="340" x2="14" y2="352" stroke="#171916" stroke-width="1.5"/>
+  <line x1="1080" y1="346" x2="1092" y2="346" stroke="#171916" stroke-width="1.5"/>
+  <line x1="1086" y1="340" x2="1086" y2="352" stroke="#171916" stroke-width="1.5"/>
+
+  <!-- =========================================================================
+       LEFT COMPOSITION: BRAND IDENTITY, TITLE & EPISTEMIC PRINCIPLES
+       ========================================================================= -->
+  <g transform="translate(48, 52)">
+    <!-- Top Classification Badge -->
+    <rect x="0" y="0" width="220" height="22" rx="3" fill="#D7D3C7" stroke="#171916" stroke-width="1.2"/>
+    <text x="10" y="15" class="hero-sub">PLANETARY INTELLIGENCE SUITE</text>
+
+    <!-- Main Title Lockup -->
+    <text x="0" y="58" class="hero-title">EARTH INTELLIGENCE</text>
+    <text x="0" y="82" class="hero-tagline">"Understand our planet. Detect change. Act on evidence."</text>
+
+    <!-- Verified Capabilities Grid -->
+    <g transform="translate(0, 110)">
+      <!-- Item 1: Forest & Carbon -->
+      <rect x="0" y="0" width="18" height="18" rx="3" fill="#59745C" stroke="#171916" stroke-width="1"/>
+      <path d="M4 14l5-9 5 9H4z" fill="#F0E9DC"/>
+      <text x="26" y="10" class="hero-feat-title">30m Global Canopy Loss Monitoring</text>
+      <text x="26" y="22" class="hero-feat-desc">Hansen/UMD 2001–2024 dynamics & biomass carbon release</text>
+
+      <!-- Item 2: HydroSHEDS & Rivers -->
+      <g transform="translate(0, 36)">
+        <rect x="0" y="0" width="18" height="18" rx="3" fill="#254735" stroke="#171916" stroke-width="1"/>
+        <path d="M4 9c3-2 7 2 10 0" stroke="#F0E9DC" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="26" y="10" class="hero-feat-title">8.5 Million River Reaches & Dam Siting</text>
+        <text x="26" y="22" class="hero-feat-desc">HydroRIVERS topological routing & hydraulic head physics</text>
+      </g>
+
+      <!-- Item 3: Hazard Lens & Multimodal AI -->
+      <g transform="translate(0, 72)">
+        <rect x="0" y="0" width="18" height="18" rx="3" fill="#D96B43" stroke="#171916" stroke-width="1"/>
+        <circle cx="9" cy="9" r="3" fill="#F0E9DC"/>
+        <text x="26" y="10" class="hero-feat-title">Multimodal Spatial Reasoning (Gemma 4)</text>
+        <text x="26" y="22" class="hero-feat-desc">Satellite imagery inspection with strict epistemic evidence isolation</text>
+      </g>
+
+      <!-- Item 4: Zero-Dependency Architecture -->
+      <g transform="translate(0, 108)">
+        <rect x="0" y="0" width="18" height="18" rx="3" fill="#171916" stroke="#171916" stroke-width="1"/>
+        <path d="M5 9h8M9 5v8" stroke="#F0E9DC" stroke-width="1.5"/>
+        <text x="26" y="10" class="hero-feat-title">Zero-Dependency Node.js Microkernel</text>
+        <text x="26" y="22" class="hero-feat-desc">0 NPM runtime dependencies · precompiled binary spatial indexing</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Vertical Divider with Surveyor Ticks -->
+  <line x1="610" y1="36" x2="610" y2="324" stroke="#85877F" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="610" cy="180" r="3" fill="#171916"/>
+
+  <!-- =========================================================================
+       RIGHT COMPOSITION: CARTOGRAPHIC FIELD PLATE & GEODETIC GRAPHIC
+       ========================================================================= -->
+  <g transform="translate(640, 40)">
+    <!-- Cartographic Plate Container -->
+    <rect x="0" y="0" width="415" height="280" rx="6" fill="#D7D3C7" stroke="#171916" stroke-width="1.75"/>
+    
+    <!-- Topographic Contour Lines -->
+    <path d="M20 220 C80 180, 160 190, 240 150 C320 110, 360 80, 395 60" 
+          stroke="#254735" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M30 250 C90 210, 170 220, 250 180 C330 140, 370 120, 395 100" 
+          stroke="#59745C" stroke-width="1.75" stroke-linecap="round"/>
+    <path d="M40 270 C110 235, 190 240, 270 205 C330 175, 375 160, 395 140" 
+          stroke="#85877F" stroke-width="1.25" stroke-dasharray="2 2" stroke-linecap="round"/>
+
+    <!-- River Drainage Confluence (Master Stem) -->
+    <path d="M160 30 C150 90, 180 140, 210 170 C240 200, 230 240, 250 270" 
+          stroke="#171916" stroke-width="3" stroke-linecap="round"/>
+    <!-- Tributaries -->
+    <path d="M90 60 C120 90, 150 120, 180 140" stroke="#59745C" stroke-width="1.75" stroke-linecap="round"/>
+    <path d="M270 70 C240 110, 220 140, 210 170" stroke="#59745C" stroke-width="1.75" stroke-linecap="round"/>
+
+    <!-- Geodetic Graticule Crosshairs -->
+    <line x1="210" y1="20" x2="210" y2="260" stroke="#85877F" stroke-width="0.75" stroke-dasharray="2 3"/>
+    <line x1="20" y1="170" x2="395" y2="170" stroke="#85877F" stroke-width="0.75" stroke-dasharray="2 3"/>
+    <text x="214" y="32" class="carto-label">LON: 77°12'E</text>
+    <text x="24" y="165" class="carto-label">LAT: 28°36'N</text>
+
+    <!-- Signal Orange Observation Focal Datum (Surveyor Benchmark) -->
+    <circle cx="210" cy="170" r="14" fill="#D96B43" fill-opacity="0.2" stroke="#D96B43" stroke-width="1.5"/>
+    <circle cx="210" cy="170" r="5" fill="#D96B43" stroke="#171916" stroke-width="1.5"/>
+    <circle cx="210" cy="170" r="1.5" fill="#F0E9DC"/>
+
+    <!-- Large Emblem Stamp in Upper Right -->
+    <g transform="translate(320, 16)">
+      <circle cx="40" cy="40" r="32" fill="#F0E9DC" stroke="#171916" stroke-width="1.75"/>
+      <path d="M18 48 C28 42, 38 44, 48 38 C58 32, 64 24, 68 20" stroke="#254735" stroke-width="2" stroke-linecap="round"/>
+      <path d="M36 14 C34 26, 40 32, 44 40 C48 46, 46 54, 50 66" stroke="#59745C" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="56" cy="22" r="3" fill="#D96B43" stroke="#171916" stroke-width="1"/>
+      <line x1="40" y1="4" x2="40" y2="10" stroke="#171916" stroke-width="1.5"/>
+      <line x1="40" y1="70" x2="40" y2="76" stroke="#171916" stroke-width="1.5"/>
+    </g>
+
+    <!-- Cartographic Metadata Stamp (Bottom) -->
+    <rect x="15" y="235" width="165" height="32" rx="3" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+    <text x="22" y="248" class="hero-pill-text">DATUM: WGS84 / EGM96</text>
+    <text x="22" y="260" class="carto-label">SCALE: 1:30,000 ARCHIVAL</text>
+  </g>
+</svg>

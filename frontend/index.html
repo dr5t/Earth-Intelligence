@@ -18,17 +18,24 @@
 
   <style>
     /* =========================================================================
-       EARTH INTELLIGENCE MASTER COMMAND HEADER
+       EARTH INTELLIGENCE MASTER COMMAND HEADER & WORKSTATION THEME
        ========================================================================= */
     :root {
-      --ei-bg: #050811;
-      --ei-panel: rgba(10, 16, 30, 0.90);
-      --ei-border: rgba(255, 255, 255, 0.10);
-      --ei-emerald: #10b981;
-      --ei-cyan: #06b6d4;
-      --ei-text: #f8fafc;
-      --ei-muted: #94a3b8;
-      --ei-dim: #64748b;
+      --ei-ink: #171916;
+      --ei-bg: #171916;
+      --ei-panel: #1b1e1a;
+      --ei-panel-elevated: #222720;
+      --ei-border: #254735;
+      --ei-border-subtle: rgba(133, 135, 127, 0.25);
+      --ei-forest: #254735;
+      --ei-field: #59745C;
+      --ei-paper: #F0E9DC;
+      --ei-mineral: #D7D3C7;
+      --ei-orange: #D96B43;
+      --ei-grey: #85877F;
+      --ei-text: #F0E9DC;
+      --ei-muted: #D7D3C7;
+      --ei-dim: #85877F;
     }
 
     .ei-command-header {
@@ -43,11 +50,11 @@
       gap: 12px;
       padding: 4px 14px 4px 12px;
       border-radius: 9999px;
-      background: rgba(8, 14, 26, 0.88);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(0, 0, 0, 0.4);
+      background: rgba(23, 25, 22, 0.95);
+      border: 1.5px solid var(--ei-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--ei-text);
       white-space: nowrap;
@@ -59,7 +66,7 @@
       align-items: center;
       gap: 10px;
       padding-right: 12px;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-right: 1px solid var(--ei-border-subtle);
       text-decoration: none;
       color: inherit;
     }
@@ -71,9 +78,9 @@
       align-items: center;
       justify-content: center;
       border-radius: 7px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 3px;
+      background: var(--ei-paper);
+      border: 1px solid var(--ei-ink);
+      padding: 2px;
     }
 
     .ei-brand-logo svg, .ei-brand-logo img {
@@ -92,9 +99,7 @@
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.04em;
-      background: linear-gradient(90deg, #ffffff, #cbd5e1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--ei-paper);
       line-height: 1.1;
     }
 
@@ -110,33 +115,33 @@
     }
 
     .ei-pulse-dot {
-      width: 5px;
-      height: 5px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 6px #10b981;
+      background: var(--ei-orange);
+      box-shadow: 0 0 5px var(--ei-orange);
       animation: eiPulse 2s infinite ease-in-out;
     }
 
     @keyframes eiPulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
+      50% { opacity: 0.4; transform: scale(0.85); }
     }
 
     /* Primary Navigation Suite */
     .ei-nav-group {
       display: flex;
       align-items: center;
-      gap: 3px;
-      background: rgba(255, 255, 255, 0.04);
+      gap: 4px;
+      background: var(--ei-ink);
       padding: 3px;
       border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--ei-border);
     }
 
     .ei-nav-btn {
       appearance: none;
-      border: 0;
+      border: 1px solid transparent;
       cursor: pointer;
       padding: 6px 13px;
       border-radius: 9999px;
@@ -152,26 +157,26 @@
     }
 
     .ei-nav-btn:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
+      color: var(--ei-paper);
+      background: rgba(240, 233, 220, 0.08);
     }
 
     .ei-nav-btn.active[data-mode="forest"] {
-      background: linear-gradient(135deg, #059669, #10b981);
-      color: #ffffff;
-      box-shadow: 0 0 16px rgba(16, 185, 129, 0.4);
+      background: var(--ei-forest);
+      color: var(--ei-paper);
+      border-color: var(--ei-field);
     }
 
     .ei-nav-btn.active[data-mode="river"] {
-      background: linear-gradient(135deg, #0284c7, #06b6d4);
-      color: #ffffff;
-      box-shadow: 0 0 16px rgba(6, 182, 212, 0.4);
+      background: var(--ei-forest);
+      color: var(--ei-paper);
+      border-color: var(--ei-field);
     }
 
     .ei-nav-btn.lens-active {
-      background: rgba(56, 189, 248, 0.16);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: var(--ei-orange);
+      color: var(--ei-paper);
+      border-color: var(--ei-ink);
     }
 
     .ei-nav-icon {
@@ -196,8 +201,8 @@
       gap: 6px;
       padding: 5px 11px;
       border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--ei-border);
+      background: var(--ei-panel);
       color: var(--ei-muted);
       font-size: 11.5px;
       font-weight: 600;
@@ -206,25 +211,25 @@
     }
 
     .ei-action-pill:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.22);
+      background: var(--ei-panel-elevated);
+      color: var(--ei-paper);
+      border-color: var(--ei-field);
     }
 
     .ei-action-pill.active {
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border-color: rgba(16, 185, 129, 0.4);
+      background: var(--ei-forest);
+      color: var(--ei-paper);
+      border-color: var(--ei-field);
     }
 
     .ei-kbd {
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: var(--ei-panel);
+      border: 1px solid var(--ei-border);
       border-radius: 4px;
-      padding: 1px 4px;
-      color: #cbd5e1;
+      padding: 1px 5px;
+      color: var(--ei-mineral);
     }
 
     /* Responsive */
@@ -250,9 +255,9 @@
       position: fixed;
       inset: 0;
       z-index: 10050;
-      background: rgba(2, 6, 18, 0.78);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(15, 17, 14, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -268,10 +273,10 @@
     }
 
     .ei-hud-card {
-      background: #090e1c;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 16px;
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 30px rgba(16, 185, 129, 0.10);
+      background: var(--ei-panel);
+      border: 1.5px solid var(--ei-border);
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
       width: 100%;
       max-width: 980px;
       max-height: 88vh;
@@ -290,9 +295,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.02);
+      padding: 16px 22px;
+      border-bottom: 1.5px solid var(--ei-border);
+      background: var(--ei-ink);
     }
 
     .ei-hud-title-block {
@@ -304,34 +309,34 @@
     .ei-hud-icon-box {
       width: 36px;
       height: 36px;
-      border-radius: 9px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 8px;
+      background: var(--ei-paper);
+      border: 1.5px solid var(--ei-ink);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #34d399;
+      color: var(--ei-ink);
     }
 
     .ei-hud-title {
       font-family: 'Outfit', sans-serif;
       font-size: 17px;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--ei-paper);
       letter-spacing: 0.02em;
     }
 
     .ei-hud-sub {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      color: var(--ei-muted);
+      color: var(--ei-dim);
     }
 
     .ei-hud-close {
       appearance: none;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 8px;
+      background: var(--ei-panel-elevated);
+      border: 1px solid var(--ei-border);
+      border-radius: 6px;
       color: var(--ei-muted);
       cursor: pointer;
       width: 32px;
@@ -343,31 +348,31 @@
     }
 
     .ei-hud-close:hover {
-      background: rgba(239, 68, 68, 0.2);
-      border-color: rgba(239, 68, 68, 0.4);
-      color: #fca5a5;
+      background: var(--ei-orange);
+      border-color: var(--ei-ink);
+      color: var(--ei-paper);
     }
 
     .ei-hud-body {
-      padding: 24px;
+      padding: 22px;
       overflow-y: auto;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 22px;
     }
 
     /* KPI Grid */
     .ei-kpi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
+      gap: 12px;
     }
 
     .ei-kpi-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 12px;
+      background: var(--ei-ink);
+      border: 1px solid var(--ei-border);
+      border-radius: 8px;
       padding: 16px;
       display: flex;
       flex-direction: column;
@@ -386,7 +391,7 @@
       font-family: 'Outfit', sans-serif;
       font-size: 24px;
       font-weight: 800;
-      color: #f8fafc;
+      color: var(--ei-paper);
       letter-spacing: -0.02em;
     }
 
@@ -407,20 +412,20 @@
       align-items: flex-start;
       gap: 12px;
       padding: 12px 14px;
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
+      background: var(--ei-ink);
+      border: 1px solid var(--ei-border);
+      border-radius: 8px;
     }
 
     .ei-source-icon {
-      color: #38bdf8;
+      color: var(--ei-field);
       margin-top: 2px;
     }
 
     .ei-source-name {
       font-size: 12.5px;
       font-weight: 700;
-      color: #f1f5f9;
+      color: var(--ei-paper);
     }
 
     .ei-source-desc {
@@ -434,8 +439,8 @@
     .ei-table-wrap {
       width: 100%;
       overflow-x: auto;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 10px;
+      border: 1.5px solid var(--ei-border);
+      border-radius: 8px;
     }
 
     .ei-table {
@@ -446,33 +451,33 @@
     }
 
     .ei-table th {
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--ei-ink);
       padding: 10px 14px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--ei-dim);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1.5px solid var(--ei-border);
     }
 
     .ei-table td {
       padding: 10px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      color: #e2e8f0;
+      border-bottom: 1px solid var(--ei-border-subtle);
+      color: var(--ei-text);
     }
 
     .ei-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(89, 116, 92, 0.08);
     }
 
     .ei-jump-btn {
       appearance: none;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #cbd5e1;
-      padding: 4px 8px;
+      border: 1px solid var(--ei-border);
+      border-radius: 5px;
+      background: var(--ei-panel);
+      color: var(--ei-paper);
+      padding: 4px 9px;
       font-size: 11px;
       font-weight: 600;
       cursor: pointer;
@@ -483,9 +488,9 @@
     }
 
     .ei-jump-btn:hover {
-      background: rgba(16, 185, 129, 0.15);
-      border-color: rgba(16, 185, 129, 0.4);
-      color: #34d399;
+      background: var(--ei-forest);
+      border-color: var(--ei-field);
+      color: var(--ei-paper);
     }
 
     /* Hazard Overlay */
@@ -493,7 +498,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: #050811;
+      background: var(--ei-bg);
     }
     .hazard-lens-overlay[hidden] {
       display: none;

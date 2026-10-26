@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Tile Base: Warm Paper with Solid Ink Contour -->
+  <rect x="2" y="2" width="44" height="44" rx="8" fill="#F0E9DC" stroke="#171916" stroke-width="2"/>
+  
+  <!-- 30m Grid Benchmark Matrix -->
+  <path d="M10 16h28M10 24h28M10 32h28" stroke="#D7D3C7" stroke-width="1" stroke-dasharray="2 2"/>
+  <path d="M18 10v28M26 10v28M34 10v28" stroke="#D7D3C7" stroke-width="1" stroke-dasharray="2 2"/>
+  
+  <!-- Topographic Base Strata -->
+  <path d="M8 38c6-2 14-1 20-3 5-1.5 8-4 12-4" stroke="#254735" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Stratified Forest Canopy Silhouette -->
+  <path d="M24 10c-6.5 0-11 5-11 11.5 0 4.5 3 7.5 7 8.5v6h8v-6c4-1 7-4 7-8.5 0-6.5-4.5-11.5-11-11.5z" 
+        fill="#59745C" fill-opacity="0.25" stroke="#171916" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Canopy Trunk Core -->
+  <path d="M24 21v15" stroke="#254735" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 27l4-4 4 4" stroke="#254735" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Signal Orange Deforestation Loss Benchmark -->
+  <circle cx="34" cy="18" r="3.5" fill="#D96B43" stroke="#171916" stroke-width="1.5"/>
+  <path d="M32.5 16.5l3 3M35.5 16.5l-3 3" stroke="#F0E9DC" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Tile Base: Warm Paper with Solid Ink Contour -->
+  <rect x="2" y="2" width="44" height="44" rx="8" fill="#F0E9DC" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Catchment Relief Isoline -->
+  <path d="M8 12c8-2 18 1 24-2s6-4 10-4" stroke="#D7D3C7" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M6 40c10-2 20 0 28-3s6-4 8-6" stroke="#D7D3C7" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Dendritic Tributary Filaments (Strahler 1 & 2) -->
+  <path d="M10 8c3 5 7 10 12 14" stroke="#59745C" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 10c-3 5-8 10-14 12" stroke="#59745C" stroke-width="2" stroke-linecap="round"/>
+  <path d="M10 28c4 0 9-3 14-6" stroke="#59745C" stroke-width="1.75" stroke-linecap="round"/>
+  
+  <!-- Master Stem Drainage (Strahler 4+) -->
+  <path d="M24 22c0 6-3 10-2 18" stroke="#171916" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24 22c0 6-3 10-2 18" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Flow Vector Direction Arrow -->
+  <path d="M19 36l3 4 4-2" stroke="#171916" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Signal Orange Confluence Benchmark Node -->
+  <circle cx="24" cy="22" r="4.5" fill="#D96B43" stroke="#171916" stroke-width="1.5"/>
+  <circle cx="24" cy="22" r="1.5" fill="#F0E9DC"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Tile Base: Warm Paper with Solid Ink Contour -->
+  <rect x="2" y="2" width="44" height="44" rx="8" fill="#F0E9DC" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Seismic Epicenter Shockwaves -->
+  <circle cx="24" cy="24" r="15" stroke="#D7D3C7" stroke-width="1.2" stroke-dasharray="2 3"/>
+  <circle cx="24" cy="24" r="10" stroke="#85877F" stroke-width="1.2" stroke-dasharray="2 2"/>
+  
+  <!-- Displaced Geological Tectonic Fault Strata -->
+  <!-- Left Crustal Block -->
+  <path d="M8 18h11l-3 12H8V18z" fill="#59745C" fill-opacity="0.3" stroke="#171916" stroke-width="1.75"/>
+  <line x1="8" y1="24" x2="17.5" y2="24" stroke="#254735" stroke-width="1.2"/>
+  
+  <!-- Right Displaced Crustal Block -->
+  <path d="M29 14h11v12H32l-3-12z" fill="#254735" fill-opacity="0.25" stroke="#171916" stroke-width="1.75"/>
+  <line x1="30.5" y1="20" x2="40" y2="20" stroke="#254735" stroke-width="1.2"/>
+  
+  <!-- Fault Fracture Line -->
+  <path d="M19 8l-3 12 7 8-3 12" stroke="#171916" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Signal Orange Hazard Synthesis Focus Datum -->
+  <polygon points="24,19 28,26 20,26" fill="#D96B43" stroke="#171916" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="24" y1="22" x2="24" y2="24" stroke="#F0E9DC" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="24" cy="25" r="0.6" fill="#F0E9DC"/>
+</svg>

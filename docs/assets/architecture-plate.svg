@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" fill="none">
+  <defs>
+    <style>
+      .arch-title { font-family: 'Outfit', -apple-system, sans-serif; font-weight: 800; font-size: 16px; fill: #171916; letter-spacing: 0.05em; }
+      .arch-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #85877F; letter-spacing: 0.04em; }
+      .box-title { font-family: 'Outfit', -apple-system, sans-serif; font-weight: 700; font-size: 13px; fill: #171916; letter-spacing: 0.02em; }
+      .item-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 11px; fill: #171916; }
+      .item-desc { font-family: 'Inter', -apple-system, sans-serif; font-size: 9.5px; fill: #59745C; }
+      .badge-text { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; fill: #F0E9DC; }
+      .mono-code { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #254735; }
+    </style>
+    <!-- Arrow Marker Definition -->
+    <marker id="flow-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#171916" />
+    </marker>
+    <marker id="flow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#D96B43" />
+    </marker>
+  </defs>
+
+  <!-- 1. Warm Paper Base Substrate -->
+  <rect x="0" y="0" width="960" height="560" fill="#F0E9DC"/>
+
+  <!-- 2. Technical Drawing Outer Frame & Surveyor Corner Ticks -->
+  <rect x="16" y="16" width="928" height="528" fill="none" stroke="#171916" stroke-width="2"/>
+  <rect x="22" y="22" width="916" height="516" fill="none" stroke="#85877F" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Surveyor Registration Marks (Corners) -->
+  <line x1="8" y1="16" x2="24" y2="16" stroke="#171916" stroke-width="1.5"/>
+  <line x1="16" y1="8" x2="16" y2="24" stroke="#171916" stroke-width="1.5"/>
+  <line x1="936" y1="16" x2="952" y2="16" stroke="#171916" stroke-width="1.5"/>
+  <line x1="944" y1="8" x2="944" y2="24" stroke="#171916" stroke-width="1.5"/>
+  <line x1="8" y1="544" x2="24" y2="544" stroke="#171916" stroke-width="1.5"/>
+  <line x1="16" y1="536" x2="16" y2="552" stroke="#171916" stroke-width="1.5"/>
+  <line x1="936" y1="544" x2="952" y2="544" stroke="#171916" stroke-width="1.5"/>
+  <line x1="944" y1="536" x2="944" y2="552" stroke="#171916" stroke-width="1.5"/>
+
+  <!-- 3. Title Header Block (Plate Identification) -->
+  <rect x="36" y="34" width="888" height="50" rx="4" fill="#D7D3C7" stroke="#171916" stroke-width="1.5"/>
+  <!-- Brand Emblem Lockup in Header -->
+  <circle cx="62" cy="59" r="16" fill="#F0E9DC" stroke="#171916" stroke-width="1.5"/>
+  <path d="M50 63c4-2 8-1 12-3s6-5 9-6" stroke="#254735" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M60 48c0 4 2 7 4 10s1 7 3 11" stroke="#59745C" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="69" cy="51" r="2" fill="#D96B43"/>
+
+  <text x="90" y="52" class="arch-title">EARTH INTELLIGENCE — SYSTEM ARCHITECTURE SPECIFICATION</text>
+  <text x="90" y="68" class="arch-sub">SYSTEM REF: EI-ENG-2026 // NODE.JS ZERO-DEP MICROKERNEL // 8.5M RIVER REACH TOPOLOGY // GEMMA 4 REASONING</text>
+  <rect x="765" y="44" width="145" height="28" rx="3" fill="#171916"/>
+  <text x="778" y="62" class="badge-text">STATUS: VERIFIED L4</text>
+
+  <!-- =========================================================================
+       COLUMN 1: CLIENT TIER (BROWSER WORKSTATION)
+       ========================================================================= -->
+  <rect x="36" y="100" width="270" height="315" rx="6" fill="#D7D3C7" stroke="#171916" stroke-width="1.5"/>
+  <rect x="36" y="100" width="270" height="28" rx="6" fill="#254735"/>
+  <text x="48" y="119" style="font-family:'Outfit'; font-weight:700; font-size:12px; fill:#F0E9DC;">CLIENT TIER: GEOSPATIAL COMMAND SUITE</text>
+
+  <!-- Module 1: Three.js 3D Earth Globe -->
+  <rect x="46" y="138" width="250" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="56" y="156" class="box-title">Planetary Globe (WebGL)</text>
+  <text x="56" y="172" class="item-desc">Three.js custom shader, solar terminator,</text>
+  <text x="56" y="184" class="item-desc">Hansen 30m forest loss layer, biome bounds</text>
+
+  <!-- Module 2: Leaflet River Topology -->
+  <rect x="46" y="202" width="250" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="56" y="220" class="box-title">Hydrology Canvas (Leaflet)</text>
+  <text x="56" y="236" class="item-desc">TopoJSON stream network, Strahler orders 1-9,</text>
+  <text x="56" y="248" class="item-desc">GloFAS gauge pins, dam siting interactive pins</text>
+
+  <!-- Module 3: Modals & Tooling -->
+  <rect x="46" y="266" width="250" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="56" y="284" class="box-title">Hazard Lens & Evidence Dossiers</text>
+  <text x="56" y="300" class="item-desc">Multimodal satellite inspection, forensic</text>
+  <text x="56" y="312" class="item-desc">JSON compliance exports, Treeko assistant</text>
+
+  <!-- Module 4: EarthIcons System -->
+  <rect x="46" y="330" width="250" height="42" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="56" y="348" class="box-title">Bespoke Vector Registry</text>
+  <text x="56" y="362" class="item-desc">Bespoke illustrated cartographic geometry</text>
+
+  <!-- Connective Arrow from Client to Microkernel -->
+  <line x1="306" y1="250" x2="348" y2="250" stroke="#171916" stroke-width="2" marker-end="url(#flow-arrow)"/>
+  <text x="312" y="242" style="font-family:'JetBrains Mono'; font-size:9px; fill:#171916;">REST</text>
+
+  <!-- =========================================================================
+       COLUMN 2: SECURITY & NODE.JS MICROKERNEL (CORE TIER)
+       ========================================================================= -->
+  <rect x="355" y="100" width="260" height="315" rx="6" fill="#D7D3C7" stroke="#171916" stroke-width="1.5"/>
+  <rect x="355" y="100" width="260" height="28" rx="6" fill="#171916"/>
+  <text x="367" y="119" style="font-family:'Outfit'; font-weight:700; font-size:12px; fill:#F0E9DC;">MICROKERNEL & SECURITY GATEWAY</text>
+
+  <!-- Component 1: Security Shield -->
+  <rect x="365" y="138" width="240" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <circle cx="380" cy="154" r="5" fill="#D96B43"/>
+  <text x="392" y="157" class="box-title">Security & Rate Limiter</text>
+  <text x="375" y="173" class="item-desc">Strict CSP, CORS, sliding-window limiter,</text>
+  <text x="375" y="185" class="item-desc">geodetic boundary clamp (lat/lon bounds)</text>
+
+  <!-- Component 2: Zero-Dependency Dispatcher -->
+  <rect x="365" y="202" width="240" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="375" y="220" class="box-title">Node.js 22 LTS Microkernel</text>
+  <text x="375" y="236" class="item-desc">Native http & fs modules (0 npm packages),</text>
+  <text x="375" y="248" class="item-desc">REST API routing (/api/v1/*), thread-safe</text>
+
+  <!-- Component 3: Epistemic Tier Separator -->
+  <rect x="365" y="266" width="240" height="66" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="375" y="284" class="box-title">Scientific Evidence Manager</text>
+  <text x="375" y="299" class="item-desc">Tier 1: Ground / Satellite Physical Data</text>
+  <text x="375" y="311" class="item-desc">Tier 2: Peer-Reviewed Deterministic Physics</text>
+  <text x="375" y="323" class="item-desc">Tier 3: Gemma 4 Multimodal Synthesis</text>
+
+  <!-- Connective Arrow from Microkernel to Data Engines -->
+  <line x1="615" y1="250" x2="658" y2="250" stroke="#171916" stroke-width="2" marker-end="url(#flow-arrow)"/>
+  <text x="622" y="242" style="font-family:'JetBrains Mono'; font-size:9px; fill:#171916;">IO</text>
+
+  <!-- =========================================================================
+       COLUMN 3: DETERMINISTIC PHYSICS & PRECOMPILED BINARIES
+       ========================================================================= -->
+  <rect x="665" y="100" width="260" height="315" rx="6" fill="#D7D3C7" stroke="#171916" stroke-width="1.5"/>
+  <rect x="665" y="100" width="260" height="28" rx="6" fill="#254735"/>
+  <text x="677" y="119" style="font-family:'Outfit'; font-weight:700; font-size:12px; fill:#F0E9DC;">SPATIAL STORAGE & PHYSICS ENGINES</text>
+
+  <!-- Binary 1: HydroRIVERS Binary Stream -->
+  <rect x="675" y="138" width="240" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="685" y="156" class="box-title">hydrorivers.bin (Zero Latency)</text>
+  <text x="685" y="172" class="item-desc">8.5M river reaches indexed in binary buffer,</text>
+  <text x="685" y="184" class="item-desc">downstream reach traversal & slope routing</text>
+
+  <!-- Binary 2: Deterministic Hydropower Siting -->
+  <rect x="675" y="202" width="240" height="56" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="685" y="220" class="box-title">Hydropower Potential Engine</text>
+  <text x="685" y="236" class="mono-code">P = η · ρ · g · Q · H</text>
+  <text x="685" y="248" class="item-desc">Copernicus GLO-30 DEM + GloFAS Runoff</text>
+
+  <!-- Binary 3: Satellite Radiometry & Forest -->
+  <rect x="675" y="266" width="240" height="66" rx="4" fill="#F0E9DC" stroke="#171916" stroke-width="1.2"/>
+  <text x="685" y="284" class="box-title">Remote Sensing & Radiometry</text>
+  <text x="685" y="299" class="item-desc">• Dogliotti Turbidity (842nm/665nm ratio)</text>
+  <text x="685" y="311" class="item-desc">• Mishra NDCI Chlorophyll-a (ESA S2)</text>
+  <text x="685" y="323" class="item-desc">• Hansen/UMD 30m Global Forest Carbon</text>
+
+  <!-- =========================================================================
+       BOTTOM PLATE: AI MULTIMODAL SPATIAL REASONING BRIDGE (GEMMA 4)
+       ========================================================================= -->
+  <rect x="36" y="430" width="888" height="88" rx="6" fill="#D7D3C7" stroke="#171916" stroke-width="1.5"/>
+  <rect x="36" y="430" width="888" height="24" rx="6" fill="#D96B43"/>
+  <text x="48" y="446" style="font-family:'Outfit'; font-weight:700; font-size:11px; fill:#F0E9DC;">TIER 3 MULTIMODAL REASONING: GOOGLE GEMMA 4 (AMAZON BEDROCK / GOOGLE AI STUDIO / VERTEX AI)</text>
+
+  <text x="50" y="474" class="box-title">Multimodal Spatial Synthesis & Cascading Risk Hypotheses</text>
+  <text x="50" y="492" class="item-desc">• Correlates high-res satellite imagery + slope DEM + precipitation anomalies + live seismic shake maps (USGS M5.0+)</text>
+  <text x="50" y="504" class="item-desc">• Strict Epistemic Isolation: Inferences labeled as hypotheses; raw sensor data & physical equations remain fully auditable</text>
+
+  <!-- Bidirectional Connection Arrow from Microkernel to AI Bridge -->
+  <line x1="485" y1="415" x2="485" y2="425" stroke="#D96B43" stroke-width="2" marker-end="url(#flow-orange)"/>
+</svg>

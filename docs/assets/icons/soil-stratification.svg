@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Tile Base: Warm Paper with Solid Ink Contour -->
+  <rect x="2" y="2" width="44" height="44" rx="8" fill="#F0E9DC" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Soil Horizon Core Sample Column -->
+  <rect x="14" y="10" width="20" height="28" rx="2" fill="#D7D3C7" stroke="#171916" stroke-width="2"/>
+  
+  <!-- Stratified Layers: Topsoil / Subsoil / Bedrock -->
+  <!-- Horizon A (0-15cm organic loam) -->
+  <rect x="14" y="10" width="20" height="7" fill="#59745C" fill-opacity="0.35"/>
+  <line x1="14" y1="17" x2="34" y2="17" stroke="#171916" stroke-width="1.5"/>
+  
+  <!-- Horizon B (15-30cm clay/mineral) -->
+  <rect x="14" y="17" width="20" height="8" fill="#254735" fill-opacity="0.2"/>
+  <line x1="14" y1="25" x2="34" y2="25" stroke="#171916" stroke-width="1.5" stroke-dasharray="2 2"/>
+  
+  <!-- Horizon C (30-60cm weathered substrata) -->
+  <rect x="14" y="25" width="20" height="13" fill="#85877F" fill-opacity="0.2"/>
+  
+  <!-- Depth Calibration Gauge Notches (Left) -->
+  <line x1="10" y1="10" x2="13" y2="10" stroke="#171916" stroke-width="1.5"/>
+  <line x1="11" y1="17" x2="13" y2="17" stroke="#171916" stroke-width="1.5"/>
+  <line x1="11" y1="25" x2="13" y2="25" stroke="#171916" stroke-width="1.5"/>
+  <line x1="10" y1="38" x2="13" y2="38" stroke="#171916" stroke-width="1.5"/>
+  
+  <!-- Infiltration / Moisture Vector (Percolation) -->
+  <path d="M24 12v6m0 0l-1.5-1.5M24 18l1.5-1.5" stroke="#254735" stroke-width="1.2" stroke-linecap="round"/>
+  
+  <!-- Signal Orange Penetrometer Benchmark Datum -->
+  <circle cx="28" cy="21" r="3" fill="#D96B43" stroke="#171916" stroke-width="1.5"/>
+  <circle cx="28" cy="21" r="1" fill="#F0E9DC"/>
+</svg>

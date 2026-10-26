@@ -4,25 +4,25 @@
    ========================================================================== */
 
 :root {
-  --bg-abyss: #050811;
-  --bg-surface: #0a0f1d;
-  --bg-glass: rgba(10, 16, 30, 0.78);
-  --border-glass: rgba(255, 255, 255, 0.12);
-  --border-glass-glow: rgba(56, 189, 248, 0.35);
+  --bg-abyss: #171916;
+  --bg-surface: #1b1e1a;
+  --bg-glass: rgba(23, 25, 22, 0.92);
+  --border-glass: #254735;
+  --border-glass-glow: #59745C;
 
-  --forest-emerald: #10b981;
-  --forest-green: #059669;
-  --forest-glow: rgba(16, 185, 129, 0.45);
-  --forest-gradient: linear-gradient(135deg, #059669, #10b981);
+  --forest-emerald: #59745C;
+  --forest-green: #254735;
+  --forest-glow: rgba(37, 71, 53, 0.3);
+  --forest-gradient: linear-gradient(135deg, #254735, #59745C);
 
-  --river-cyan: #06b6d4;
-  --river-blue: #0284c7;
-  --river-glow: rgba(6, 182, 212, 0.45);
-  --river-gradient: linear-gradient(135deg, #0284c7, #06b6d4);
+  --river-cyan: #59745C;
+  --river-blue: #254735;
+  --river-glow: rgba(37, 71, 53, 0.3);
+  --river-gradient: linear-gradient(135deg, #254735, #59745C);
 
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-main: #F0E9DC;
+  --text-muted: #D7D3C7;
+  --text-dim: #85877F;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Outfit', sans-serif;
