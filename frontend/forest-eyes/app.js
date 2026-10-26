@@ -410,7 +410,7 @@ function renderRecentSearches(searches = JSON.parse(localStorage.getItem('forest
   searches.forEach(search => {
     const button = document.createElement('button');
     button.className = 'btn-preset';
-    button.textContent = `📍 ${search.name}`;
+    button.innerHTML = `<span class="icon-loc">${window.EarthIcons ? EarthIcons.get('map-pin', 12) : ''}</span> ${search.name}`;
     button.title = `Load ${search.name}`;
     button.addEventListener('click', () => {
       applyLocation(search.lat, search.lng, search.name);
@@ -729,25 +729,25 @@ function getSeverityLevel(totalHa, areaKm2 = 400) {
   if (totalHa > 100) return {
     level: 'VERY HIGH DEFORESTATION',
     color: 'red',
-    icon: '🔴',
+    icon: 'alert-triangle',
     desc: 'Critical deforestation detected. Immediate intervention required to prevent further ecosystem collapse.',
   };
   if (totalHa > 10) return {
     level: 'MODERATE DEFORESTATION',
     color: 'orange',
-    icon: '🟠',
+    icon: 'alert-triangle',
     desc: 'Significant tree cover loss identified. Monitoring and targeted reforestation recommended.',
   };
   if (totalHa > 1) return {
     level: 'LOW DEFORESTATION',
     color: 'yellow',
-    icon: '🟡',
+    icon: 'shield',
     desc: 'Minor deforestation detected. Area should be monitored for future changes.',
   };
   return {
     level: 'NEGLIGIBLE DEFORESTATION',
     color: 'green',
-    icon: '🟢',
+    icon: 'check',
     desc: 'Little to no deforestation detected. This area appears well-preserved.',
   };
 }
@@ -771,21 +771,23 @@ function renderDeforestationResults(lat, lng, locationName, data, source) {
   const { rows, totalHa, totalEmissions, treesNeeded } = data;
   const severity = getSeverityLevel(totalHa, data.areaKm2);
 
-  $resultLocationName.textContent = `📍 ${locationName}`;
+  $resultLocationName.innerHTML = `<span class="icon-loc">${window.EarthIcons ? EarthIcons.get('map-pin', 16) : ''}</span> ${locationName}`;
 
   // Show data origin badge
   if (source === 'real') {
-    $apiUpdated.textContent = data.updatedAt
-      ? `🟢 Live API data — updated ${formatDate(data.updatedAt)}`
-      : '🟢 Live API data';
-    $apiUpdated.style.color = 'rgba(0, 230, 118, 0.7)';
+    $apiUpdated.innerHTML = `<span style="display:inline-flex;align-items:center;gap:4px;">${window.EarthIcons ? EarthIcons.get('activity', 12) : '●'} ${data.updatedAt ? `Verified Observation — updated ${formatDate(data.updatedAt)}` : 'Verified Observation'}</span>`;
+    $apiUpdated.style.color = 'rgba(0, 230, 118, 0.9)';
   } else {
-    $apiUpdated.textContent = '🔵 Simulated biome estimate';
-    $apiUpdated.style.color = 'rgba(66, 165, 245, 0.7)';
+    $apiUpdated.innerHTML = `<span style="display:inline-flex;align-items:center;gap:4px;">${window.EarthIcons ? EarthIcons.get('layers', 12) : '●'} Calibrated Biome Baseline</span>`;
+    $apiUpdated.style.color = 'rgba(66, 165, 245, 0.9)';
   }
 
   $severityCard.className = `severity-card ${severity.color}`;
-  $severityIcon.textContent = severity.icon;
+  if (window.EarthIcons) {
+    $severityIcon.innerHTML = EarthIcons.get(severity.icon, 22);
+  } else {
+    $severityIcon.textContent = '●';
+  }
   $severityLevel.textContent = severity.level;
   $severityDesc.textContent = severity.desc;
   window.ForestTreeko?.setSeverity(severity.color); // [treeko] picture follows the result; no-op if treeko.js is missing
@@ -976,16 +978,16 @@ function renderGlobalWarmingIndicator(temp, humidity, totalHa) {
 
   let label, desc, color;
   if (composite < 0.25) {
-    label = '🟢 Low Risk'; color = '#00e676';
+    label = 'Low Environmental Stress'; color = '#00e676';
     desc = 'Environmental conditions appear stable. Minimal indicators of climate stress or deforestation-driven warming.';
   } else if (composite < 0.5) {
-    label = '🟡 Moderate Risk'; color = '#ffeb3b';
+    label = 'Moderate Environmental Stress'; color = '#ffeb3b';
     desc = 'Some warming indicators detected. Temperature and humidity levels suggest early signs of climate stress.';
   } else if (composite < 0.75) {
-    label = '🟠 High Risk'; color = '#ff9800';
+    label = 'Elevated Environmental Risk'; color = '#ff9800';
     desc = 'Significant warming indicators. High temperature, reduced humidity, and notable deforestation suggest elevated climate impact.';
   } else {
-    label = '🔴 Critical Risk'; color = '#f44336';
+    label = 'Critical Environmental Risk'; color = '#f44336';
     desc = 'Severe environmental stress detected. This area shows strong indicators of deforestation-driven climate change and requires urgent action.';
   }
 
@@ -1285,7 +1287,7 @@ const analyzeObserver = new MutationObserver(() => {
 analyzeObserver.observe($resultContent, { attributes: true });
 analyzeObserver.observe($errorState, { attributes: true });
 
-console.log('%c🌳 Forest Eyes loaded', 'color:#00e676;font-size:14px;font-weight:bold');
+console.log('%cEarth Intelligence — Forest Intelligence initialized', 'color:#00e676;font-size:14px;font-weight:bold');
 console.log('%c APIs wired from wri/gfw repo:', 'color:#42a5f5');
 console.log('   1. GFW Data API    → data-api.globalforestwatch.org');
 console.log('   2. Resource Watch  → api.resourcewatch.org');

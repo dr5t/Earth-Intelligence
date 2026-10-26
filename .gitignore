@@ -1,13 +1,37 @@
-# secrets — never upload
+# Secrets and environment variables — NEVER COMMIT
 .env
+.env.local
+.env.*.local
 **/.env
-# raw downloads (data/*.bin are rebuilt from these with scripts/build-rivers.py)
+**/.env.*
+
+# Logs and runtime diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Raw downloads and spatial GIS source files
 HydroRIVERS data/
 HydroRIVERS data.zip
 *.gdb/
-# old full River Eyes project: not used by the live app, has its own keys and node_modules
 river-eyes chamoli/
-# tooling / OS
+
+# Dependencies and caches
 node_modules/
+.npm/
+.cache/
+
+# Operating System & IDE
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 __MACOSX/
+.idea/
+.vscode/
+*.swp
+*.swo

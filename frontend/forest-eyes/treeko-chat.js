@@ -151,7 +151,7 @@
           <div class="treeko-chat-title" id="treeko-chat-title">Treeko</div>
           <div class="treeko-chat-place" id="treeko-chat-place"></div>
         </div>
-        <button type="button" class="treeko-chat-key hidden" aria-label="AI key settings" title="AI key">🔑</button>
+        <button type="button" class="treeko-chat-key hidden" aria-label="AI key settings" title="AI key"><span data-icon="settings"></span></button>
         <button type="button" class="treeko-chat-close" aria-label="Close Treeko chat">×</button>
       </header>
       <div class="treeko-chat-log" role="log" aria-live="polite"></div>
@@ -160,7 +160,7 @@
       </div>
       <div class="treeko-input-row">
         <textarea class="treeko-input" rows="1" maxlength="1000" placeholder="Ask Treeko about this place…" aria-label="Message Treeko"></textarea>
-        <button type="button" class="treeko-send" aria-label="Send">➤</button>
+        <button type="button" class="treeko-send" aria-label="Send"><span data-icon="sparkles"></span></button>
       </div>`;
     document.body.appendChild(panel);
     log = panel.querySelector('.treeko-chat-log');
@@ -212,7 +212,7 @@
   /** Updates the header and, when the place changed, starts a fresh conversation about it. */
   function refreshPlace(greet) {
     const ctx = currentContext();
-    placeEl.textContent = ctx ? `📍 ${ctx.name}` : 'No place selected';
+    placeEl.textContent = ctx ? ctx.name : 'No place selected';
     const key = placeKey(ctx);
     if (key !== lastPlace) {
       const first = lastPlace === null;
@@ -221,8 +221,8 @@
       clearSites();
       if (greet || !first) {
         addBubble('treeko', ctx
-          ? `${first ? 'Hi! I\'m **Treeko** 🌳 ' : ''}Let's talk about **${ctx.name}**${ctx.analysis ? ` — ${ctx.analysis.severity.toLowerCase()} (${ctx.analysis.totalHa} ha lost)` : ''}. Ask me about the soil, which trees to plant, or where to plant them.`
-          : `${first ? 'Hi! I\'m **Treeko** 🌳 ' : ''}Search for a place (and click **Analyze Deforestation**), then ask me about its soil, the right trees, or where to plant them.`,
+          ? `${first ? 'Hi! I\'m **Treeko**, your Earth Intelligence forest advisor. ' : ''}Let's analyze **${ctx.name}**${ctx.analysis ? ` — ${ctx.analysis.severity.toLowerCase()} (${ctx.analysis.totalHa} ha lost)` : ''}. Ask about soil suitability, reforestation species, or optimal planting zones.`
+          : `${first ? 'Hi! I\'m **Treeko**, your Earth Intelligence forest advisor. ' : ''}Search for a place and click **Analyze Deforestation** to review soil suitability and reforestation strategies.`,
           first ? '' : 'note');
       }
     }

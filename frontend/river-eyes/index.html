@@ -2035,13 +2035,13 @@
       const home = [r.city.lat, r.city.lon];
       L.circle(home, { radius: r.radiusKm * 1000, color: '#38bdf8', weight: 1, dashArray: '4 6', fill: false, interactive: false }).addTo(damLayer);
       L.marker(home, {
-        icon: L.divIcon({ className: '', html: '<div style="font-size:22px;line-height:22px;filter:drop-shadow(0 1px 3px #000)">🏙️</div>', iconSize: [22, 22], iconAnchor: [11, 11] }),
+        icon: L.divIcon({ className: '', html: '<div style="width:16px;height:16px;border-radius:50%;background:#38bdf8;border:2px solid #fff;box-shadow:0 0 8px #38bdf8;"></div>', iconSize: [16, 16], iconAnchor: [8, 8] }),
       }).bindTooltip(`${escapeHtml(r.city.name)} · needs ${r.targetMw} MW`, { permanent: true, direction: 'top', offset: [0, -12] }).addTo(damLayer);
 
       const listHtml = items => `<ul style="margin:4px 0 0;padding-left:16px;font-size:11px;color:var(--text-muted);">${items.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>`;
       const footer = `
         <details style="margin-top:10px;font-size:11px;color:var(--text-muted);">
-          <summary style="cursor:pointer;color:#fbbf24;">⚠ Not evaluated in this screening (${r.notEvaluated.length})</summary>${listHtml(r.notEvaluated)}
+          <summary style="cursor:pointer;color:#fbbf24;">Screening Scope & Limitations (${r.notEvaluated.length})</summary>${listHtml(r.notEvaluated)}
         </details>
         <details style="margin-top:6px;font-size:11px;color:var(--text-muted);">
           <summary style="cursor:pointer;">Method &amp; assumptions</summary>${listHtml(r.assumptions)}
@@ -2265,6 +2265,7 @@ Telemetry verified against Central Water Commission (CWC) stage gauges and CPCB 
 
     // Initialize application on page load
     window.addEventListener('DOMContentLoaded', () => {
+      if (window.EarthIcons) window.EarthIcons.renderAll();
       initMap();
       switchRiver('ganga');
       document.getElementById('plan-city-go').addEventListener('click', findPlanCity);

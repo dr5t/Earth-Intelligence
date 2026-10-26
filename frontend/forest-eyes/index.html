@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forest Eyes — Deforestation Intelligence Platform</title>
-  <meta name="description" content="Real-time deforestation tracking and global warming analysis. Analyze any location on Earth." />
+  <title>Earth Intelligence — Forest Intelligence Platform</title>
+  <meta name="description" content="Planetary tree-canopy tracking, Hansen deforestation analytics, 3D Earth observation, and AI reforestation guidance." />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../assets/icons.css" />
+  <script src="../assets/icons.js"></script>
 </head>
 <body>
   <div id="map"></div>
   <header class="header">
     <div class="header-brand">
-      <div class="brand-icon">🌳</div>
+      <div class="brand-icon"><span data-icon="forest"></span></div>
       <div class="brand-text">
         <h1>Forest Eyes</h1>
-        <span>Deforestation Intelligence Platform</span>
+        <span>Planetary Forest Intelligence & Canopy Observation</span>
       </div>
     </div>
     <div class="header-status">
@@ -28,12 +31,12 @@
   </header>
   <aside class="panel panel-left" id="control-panel">
     <div class="panel-section">
-      <h2 class="panel-title">📍 Location Input</h2>
+      <h2 class="panel-title"><span data-icon="pin"></span> Location Input</h2>
       <div class="input-group">
         <label for="location-search">Search by Name</label>
         <div class="search-row">
           <input type="text" id="location-search" placeholder="e.g. Amazon Rainforest, Brazil" autocomplete="off" />
-          <button class="btn-icon" id="search-btn" title="Search">🔍</button>
+          <button class="btn-icon" id="search-btn" title="Search"><span data-icon="search"></span></button>
         </div>
         <div class="search-suggestions hidden" id="search-suggestions" role="listbox"></div>
       </div>
@@ -53,7 +56,7 @@
             <input type="number" id="lng-input" placeholder="-62.2159" step="any" min="-180" max="180" />
           </div>
         </div>
-        <button class="btn-icon" id="coords-search-btn" title="Search Coordinates" style="height: 38px;">🔍</button>
+        <button class="btn-icon" id="coords-search-btn" title="Search Coordinates" style="height: 38px;"><span data-icon="search"></span></button>
       </div>
       <div class="input-group">
         <label for="radius-input">Analysis Radius (km)</label>
@@ -65,11 +68,11 @@
         </div>
       </div>
       <button class="btn-primary" id="analyze-btn">
-        <span class="btn-icon-left">🛰️</span>
+        <span class="btn-icon-left"><span data-icon="satellite"></span></span>
         Analyze Deforestation
       </button>
-      <div class="data-source-toggle" hidden style="display: none;"><!-- hidden: live data is always used; the radios stay so app.js can read the mode -->
-        <div class="data-source-label">📡 Data Source</div>
+      <div class="data-source-toggle" hidden style="display: none;">
+        <div class="data-source-label"><span data-icon="activity"></span> Data Source</div>
         <div class="toggle-group">
           <label class="toggle-option">
             <input type="radio" name="data-source" id="toggle-real-api" value="real" checked />
@@ -86,9 +89,9 @@
             </span>
           </label>
         </div>
-        <div class="data-source-hint" id="data-source-hint" style="color: rgba(0, 230, 118, 0.5);">Using live GFW API with authentication</div>
+        <div class="data-source-hint" id="data-source-hint" style="color: rgba(0, 230, 118, 0.5);">Using live GFW API with server proxy</div>
       </div>
-      <!-- [treeko] chat assistant button; its picture follows the latest analysis (treeko.js) -->
+      <!-- Treeko assistant button -->
       <button type="button" class="treeko-pill" id="treeko-btn" data-mood="low" aria-label="Open Treeko chat assistant">
         <span class="treeko-avatar" aria-hidden="true">
           <img src="assets/treeko/treeko-low.png" data-mood="low" alt="" />
@@ -98,14 +101,13 @@
         <span class="treeko-name">Treeko</span>
       </button>
     </div>
-
   </aside>
   <aside class="panel panel-right" id="results-panel">
     <div class="panel-section" id="deforestation-section">
-      <h2 class="panel-title">🌲 Deforestation Analysis</h2>
+      <h2 class="panel-title"><span data-icon="forest"></span> Deforestation Analysis</h2>
       <div class="result-placeholder" id="result-placeholder">
-        <div class="placeholder-icon">🛰️</div>
-        <p>Enter a location and click <strong>Analyze</strong> to see satellite-based deforestation data.</p>
+        <div class="placeholder-icon"><span data-icon="satellite"></span></div>
+        <p>Enter a location and click <strong>Analyze</strong> to retrieve satellite-derived Hansen tree cover loss data.</p>
       </div>
       <div class="result-content hidden" id="result-content">
         <div class="location-label" id="result-location-name"></div>
@@ -140,7 +142,7 @@
           <div class="bar-chart" id="bar-chart"></div>
         </div>
         <div class="planting-card" id="planting-card">
-          <div class="planting-icon">🌱</div>
+          <div class="planting-icon"><span data-icon="sprout"></span></div>
           <div class="planting-text">
             <strong id="planting-number"></strong> trees should be planted to re-absorb this area's forest-loss CO₂ within ~40 years (60 % seedling survival) or replant the cleared land, whichever is larger.
           </div>
@@ -149,51 +151,51 @@
       <div class="loading-state hidden" id="loading-state">
         <div class="spinner"></div>
         <div class="loading-steps">
-          <div class="loading-step" id="step-1">🛰️ Generating area polygon...</div>
-          <div class="loading-step" id="step-2">📡 Submitting to analytics engine...</div>
-          <div class="loading-step" id="step-3">⏳ Processing satellite data...</div>
-          <div class="loading-step" id="step-4">✅ Formatting results...</div>
+          <div class="loading-step" id="step-1"><span data-icon="satellite"></span> Generating area polygon...</div>
+          <div class="loading-step" id="step-2"><span data-icon="activity"></span> Submitting to analytics engine...</div>
+          <div class="loading-step" id="step-3"><span data-icon="refresh"></span> Processing satellite data...</div>
+          <div class="loading-step" id="step-4"><span data-icon="check"></span> Formatting results...</div>
         </div>
       </div>
       <div class="error-state hidden" id="error-state">
-        <div class="error-icon">⚠️</div>
+        <div class="error-icon"><span data-icon="hazard"></span></div>
         <div class="error-message" id="error-message"></div>
         <button class="btn-secondary" id="retry-btn">Try Again</button>
       </div>
     </div>
     <div class="panel-section" id="climate-section">
-      <h2 class="panel-title">🌡️ Autonomous Climate Engine</h2>
+      <h2 class="panel-title"><span data-icon="activity"></span> Autonomous Climate Engine</h2>
       <p class="section-subtitle">Real-time environmental indicators at analyzed location</p>
       <div class="climate-placeholder" id="climate-placeholder"><p>Climate data will appear after analysis.</p></div>
       <div class="climate-content hidden" id="climate-content">
         <div class="climate-grid">
           <div class="climate-card">
-            <div class="climate-icon">🌡️</div>
+            <div class="climate-icon"><span data-icon="thermometer"></span></div>
             <div class="climate-value" id="cv-temp">—</div>
             <div class="climate-label">Temperature (°C)</div>
             <div class="climate-bar"><div class="climate-bar-fill" id="cb-temp"></div></div>
           </div>
           <div class="climate-card">
-            <div class="climate-icon">💧</div>
+            <div class="climate-icon"><span data-icon="droplet"></span></div>
             <div class="climate-value" id="cv-humidity">—</div>
             <div class="climate-label">Humidity (%)</div>
             <div class="climate-bar"><div class="climate-bar-fill" id="cb-humidity"></div></div>
           </div>
           <div class="climate-card">
-            <div class="climate-icon">🌧️</div>
+            <div class="climate-icon"><span data-icon="rain"></span></div>
             <div class="climate-value" id="cv-precip">—</div>
             <div class="climate-label">Precipitation (mm)</div>
             <div class="climate-bar"><div class="climate-bar-fill" id="cb-precip"></div></div>
           </div>
           <div class="climate-card">
-            <div class="climate-icon">💨</div>
+            <div class="climate-icon"><span data-icon="wind"></span></div>
             <div class="climate-value" id="cv-wind">—</div>
             <div class="climate-label">Wind Speed (km/h)</div>
             <div class="climate-bar"><div class="climate-bar-fill" id="cb-wind"></div></div>
           </div>
         </div>
         <div class="global-warming-indicator">
-          <div class="gw-title">🌍 Global Warming Risk at this Location</div>
+          <div class="gw-title"><span data-icon="globe"></span> Global Climate Risk Indicator</div>
           <div class="gw-gauge"><div class="gw-gauge-fill" id="gw-gauge-fill"></div></div>
           <div class="gw-label" id="gw-label"></div>
           <div class="gw-description" id="gw-description"></div>
@@ -201,23 +203,23 @@
       </div>
     </div>
   </aside>
-    <!-- Layer Controls -->
+  <!-- Layer Controls -->
   <div class="layer-controls" id="layer-controls">
-    <div class="layer-toggle-title">🗺️ Map Layers</div>
+    <div class="layer-toggle-title"><span data-icon="layers"></span> Map Layers</div>
     <label class="layer-toggle">
       <input type="checkbox" id="toggle-satellite" checked />
       <span class="toggle-slider"></span>
-      <span class="toggle-label">🛰️ Satellite</span>
+      <span class="toggle-label"><span data-icon="satellite"></span> Satellite</span>
     </label>
     <label class="layer-toggle">
       <input type="checkbox" id="toggle-tree-cover" checked />
       <span class="toggle-slider"></span>
-      <span class="toggle-label">🌲 Tree Cover</span>
+      <span class="toggle-label"><span data-icon="forest"></span> Tree Cover</span>
     </label>
     <label class="layer-toggle">
       <input type="checkbox" id="toggle-tree-loss" checked />
       <span class="toggle-slider"></span>
-      <span class="toggle-label">🔴 Tree Loss</span>
+      <span class="toggle-label"><span data-icon="activity"></span> Tree Loss</span>
     </label>
     <div class="layer-select-control" title="Choose how tree loss is drawn.">
       <label for="tree-loss-mode">Tree Loss Form</label>
@@ -231,13 +233,12 @@
     <label class="layer-toggle">
       <input type="checkbox" id="toggle-glad" />
       <span class="toggle-slider"></span>
-      <span class="toggle-label">⚠️ GLAD Alerts</span>
+      <span class="toggle-label"><span data-icon="hazard"></span> GLAD Alerts</span>
     </label>
-    <!-- [globe-zoom] hidden: zooming out of the world view opens the 3D Earth; globe-zoom.js drives this switch -->
     <label class="layer-toggle hidden" title="Switch from the flat map to an interactive 3D model of Earth.">
       <input type="checkbox" id="toggle-globe" />
       <span class="toggle-slider"></span>
-      <span class="toggle-label">🌍 3D Earth</span>
+      <span class="toggle-label"><span data-icon="globe"></span> 3D Earth</span>
     </label>
   </div>
   <div id="globe-container" class="hidden" aria-label="Interactive 3D Earth view"></div>
@@ -259,8 +260,8 @@
   <script src="treeko.js"></script>
   <script src="treeko-brain.js"></script>
   <script src="treeko-chat.js"></script>
-
-  </body>
+  <script>
+    if (window.EarthIcons) window.EarthIcons.renderAll();
+  </script>
+</body>
 </html>
-
-
