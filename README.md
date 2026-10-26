@@ -1,71 +1,173 @@
 <div align="center">
 
-  <img src="docs/assets/logo.svg" alt="Earth Intelligence Emblem" width="84" height="84" />
+  <a href="https://github.com/shauryatiwari/earth-intelligence">
+    <img src="docs/assets/logo.svg" alt="Earth Intelligence Emblem" width="96" height="96" />
+  </a>
 
   # EARTH INTELLIGENCE
-  ### Planetary Intelligence, Environmental Monitoring & Risk Synthesis Platform
-
-  [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
-  [![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B%20LTS-brightgreen.svg)](https://nodejs.org)
-  [![Zero NPM Dependencies](https://img.shields.io/badge/NPM%20Runtime%20Dependencies-0%20(Zero)-blue.svg)](package.json)
-  [![Security: CSP & Rate Limited](https://img.shields.io/badge/Security-CSP%20%7C%20Rate--Limited-emerald.svg)](backend/security.js)
-  [![AI: Gemma 4 Multimodal](https://img.shields.io/badge/AI-Gemma%204%20(Bedrock%20%2F%20AI%20Studio)-purple.svg)](backend/gemma.js)
-  [![HydroSHEDS v1.0](https://img.shields.io/badge/Hydrology-HydroRIVERS%20v1.0-cyan.svg)](backend/datasets/README.md)
+  ### Autonomous Environmental Intelligence & Planetary Observation Platform
 
   <p align="center">
     <strong><em>"Understand our planet. Detect change. Act on evidence."</em></strong>
   </p>
 
   <p align="center">
-    <a href="#1-product-overview">Overview</a> •
-    <a href="#2-visual-showcase">Visual Showcase</a> •
-    <a href="#3-core-capabilities">Capabilities</a> •
-    <a href="#4-architecture">Architecture</a> •
-    <a href="#5-getting-started">Getting Started</a> •
-    <a href="#6-api-documentation">API Reference</a> •
-    <a href="#7-security-posture">Security</a> •
-    <a href="#8-scientific-data-sources--attribution">Citations</a>
+    <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-22%2B%20LTS-22c55e.svg?style=flat-square&logo=node.js&logoColor=white" alt="Node.js 22+"/></a>
+    <a href="package.json"><img src="https://img.shields.io/badge/NPM%20Dependencies-0%20(Zero%20Runtime)-0284c7.svg?style=flat-square" alt="Zero Dependencies"/></a>
+    <a href="backend/security.js"><img src="https://img.shields.io/badge/Security-Strict%20CSP%20%7C%20Rate--Limited-10b981.svg?style=flat-square" alt="Security Hardened"/></a>
+    <a href="backend/gemma.js"><img src="https://img.shields.io/badge/AI%20Engine-Gemma%204%20Multimodal-a855f7.svg?style=flat-square" alt="Gemma 4"/></a>
+    <a href="backend/datasets/README.md"><img src="https://img.shields.io/badge/Hydrology-HydroRIVERS%20v1.0-06b6d4.svg?style=flat-square" alt="HydroRIVERS v1.0"/></a>
+    <a href="#20-license"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Open%20Data-f59e0b.svg?style=flat-square" alt="License"/></a>
   </p>
 
-  <img src="docs/assets/earth_intelligence_hero.jpg" alt="Earth Intelligence Command Dashboard" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.8);" />
+  <p align="center">
+    <a href="#1-what-is-earth-intelligence">What Is It?</a> •
+    <a href="#2-scientific-evidence-model">Evidence Model</a> •
+    <a href="#3-product-capabilities">Capabilities</a> •
+    <a href="#4-visual-showcase">Showcase</a> •
+    <a href="#6-system-architecture">Architecture</a> •
+    <a href="#11-installation--quick-start">Quick Start</a> •
+    <a href="#13-api-reference">API Specs</a> •
+    <a href="#14-scientific-data-sources--attribution">Citations</a>
+  </p>
+
+  <a href="#4-visual-showcase">
+    <img src="docs/assets/earth_intelligence_hero.svg" alt="Earth Intelligence Hero Banner" width="100%" style="border-radius: 12px; margin: 16px 0;" />
+  </a>
 
 </div>
 
 ---
 
-## 1. Product Overview
+## Table of Contents
 
-**Earth Intelligence** is an evidence-driven planetary observation and environmental intelligence platform. It unifies high-resolution satellite imagery, topological river hydrography, machine-learning soil mapping, seismic catalogs, and multimodal AI into a single aerospace-grade command suite.
-
-### The Problem
-Traditional environmental tooling is fragmented: satellite imagery lives in complex GIS silos, hydrological routing models require specialized HPC infrastructure, and deforestation data is locked in annual academic releases. When disasters strike or infrastructure is planned, decision-makers are forced to either piece together incompatible datasets or rely on speculative generative AI models that hallucinate risk factors.
-
-### The Earth Intelligence Solution
-Earth Intelligence enforces **transparent evidence hierarchy**:
-1. **Ground & Satellite Observations:** Hard physical measurements (Hansen/UMD 30m forest loss, USGS seismic records, Sentinel-2 surface reflectance, GloFAS v4 runoff).
-2. **Deterministic Computations:** Peer-reviewed mathematical formulations ($P = \eta \cdot \rho \cdot g \cdot Q \cdot H$ for hydropower, Dogliotti turbidity algorithms, Strahler routing).
-3. **AI-Assisted Synthesis:** Gemma 4 multimodal models correlate disparate spatial factors into executive environmental dossiers, clearly distinguished from raw observations.
-
-### Target Users
-- **Environmental & Climate Researchers:** Investigate multi-decade forest canopy dynamics and river basin sediment flux.
-- **Disaster Response & Relief Agencies:** Real-time flood surge monitoring, seismic proximity buffering, and emergency site assessment.
-- **Conservation & NGO Teams:** Track deforestation alerts, estimate biomass carbon emissions, and plan native reforestation goals.
-- **Civil Infrastructure & Hydropower Planners:** Screen potential run-of-the-river generation, dam basin impacts, and city power grids.
+- [1. What Is Earth Intelligence?](#1-what-is-earth-intelligence)
+- [2. Scientific Evidence Model](#2-scientific-evidence-model)
+- [3. Product Capabilities](#3-product-capabilities)
+- [4. Visual Showcase](#4-visual-showcase)
+- [5. How It Works](#5-how-it-works)
+- [6. System Architecture](#6-system-architecture)
+- [7. Data Flow Lifecycle](#7-data-flow-lifecycle)
+- [8. Technology Stack](#8-technology-stack)
+- [9. Repository Structure](#9-repository-structure)
+- [10. Prerequisites](#10-prerequisites)
+- [11. Installation & Quick Start](#11-installation--quick-start)
+- [12. Configuration & Environment Variables](#12-configuration--environment-variables)
+- [13. API Reference](#13-api-reference)
+- [14. Scientific Data Sources & Attribution](#14-scientific-data-sources--attribution)
+- [15. Testing & Verification](#15-testing--verification)
+- [16. Security Posture](#16-security-posture)
+- [17. Limitations & Uncertainty](#17-limitations--uncertainty)
+- [18. Roadmap](#18-roadmap)
+- [19. Contributing](#19-contributing)
+- [20. License](#20-license)
+- [21. Acknowledgements](#21-acknowledgements)
 
 ---
 
-## 2. Visual Showcase
+## 1. What Is Earth Intelligence?
+
+**Earth Intelligence** is an evidence-driven, planetary-scale environmental intelligence platform. It fuses multi-decade satellite observations, global topological river networks, multi-depth soil physics, seismic event catalogs, and multimodal AI into a unified geospatial command suite.
+
+### The Problem
+Planetary change analysis has historically suffered from three structural failures:
+1. **Siloed Geospatial Datasets:** Hydrological flow routing (HydroSHEDS), satellite multispectral bands (Sentinel-2), and forest loss statistics (Hansen/UMD) live in isolated academic archives requiring disparate GIS tools and high-performance computing setups.
+2. **Generative AI Hallucinations:** Generic Large Language Models frequently invent environmental statistics, hazard ratings, and downstream hydrological impacts without ground-truth topological anchoring.
+3. **Black-Box Reporting:** Environmental impact reports regularly blend physical in-situ sensor measurements with unverified model predictions, making it impossible for researchers and disaster teams to audit the underlying evidence.
+
+### The Earth Intelligence Approach
+Earth Intelligence bridges this gap by unifying scientific observation layers into an interactive web interface powered by a **zero-dependency Node.js microkernel**:
+- **8.5 Million River Reaches** precompiled into zero-latency binary spatial indexes (`hydrorivers.bin`).
+- **30-Meter Forest Dynamics** tracking annual deforestation, carbon release, and reforestation recovery goals.
+- **Multimodal Spatial Reasoning** using Google Gemma 4 to analyze satellite imagery in direct correlation with simultaneous hydrological and seismic telemetry.
+- **Zero Runtime Dependencies** eliminating NPM supply chain attack vectors and ensuring instant cold starts.
+
+---
+
+## 2. Scientific Evidence Model
+
+Earth Intelligence enforces a rigorous **three-tier epistemic hierarchy** across every user-facing screen, API endpoint, and export dossier:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   TIER 1: PHYSICAL OBSERVATIONS                        │
+│   Ground sensors, satellite reflectance, seismic registers, DEMs       │
+│   • Hansen/UMD 30m Tree Cover Loss (2001–2024)                         │
+│   • Copernicus GloFAS v4.0 Daily Runoff (m³/s)                         │
+│   • USGS ANSS Comprehensive Earthquake Catalog (M5.0+)                 │
+│   • ESA Sentinel-2 MSI Multi-Spectral Surface Reflectance (L2A)        │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ Input to deterministic physics
+┌───────────────────────────────────▼────────────────────────────────────┐
+│                TIER 2: DETERMINISTIC DERIVED CALCULATIONS               │
+│   Peer-reviewed mathematical & physical formulations                   │
+│   • Theoretical Hydropower Potential:  P = η · ρ · g · Q · H           │
+│   • Radiometric Water Turbidity: Dogliotti (2015) 842nm/665nm ratio    │
+│   • Chlorophyll-a Concentration: Mishra (2012) NDCI Algorithm          │
+│   • Upstream Catchment Delineation: Strahler Stream Order (1–9)        │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ Contextual inputs for AI reasoning
+┌───────────────────────────────────▼────────────────────────────────────┐
+│                TIER 3: AI-ASSISTED MULTIMODAL SYNTHESIS                 │
+│   Gemma 4 26B-A4B-IT / 31B-IT Cross-Domain Hypotheses                  │
+│   • Correlates terrain slope + precipitation anomaly + canopy loss    │
+│   • Flags multi-hazard cascading risks (e.g. debris flow gorge dam)   │
+│   • Strictly isolated with explicit scientific transparency caveats    │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+> **Epistemic Rule:** Model inferences are categorized as analytical hypotheses. Ground-truth hydrological gauges and verified satellite observations must supersede model estimates for civil infrastructure design and emergency evacuation planning.
+
+---
+
+## 3. Product Capabilities
+
+| Domain | Capability | Description | Core Scientific Baseline |
+|---|---|---|---|
+| **Forest** | **30m Canopy Loss Monitoring** | High-resolution spatial tracking of global tree cover loss from 2001 to 2024 with biomass carbon emission estimations ($Mg\ CO_2e$). | Hansen et al. (Science 2013), GFW API |
+| **Forest** | **Seedling Reforestation Model** | Calculates native tree seedlings needed for 40-year carbon offset and hectare replanting at 60% seedling survival rates. | 0.021 t CO₂/yr absorption constant |
+| **Forest** | **3D WebGL Earth Globe** | Interactive spherical Earth visualizer featuring biome layers, cloud layers, and real-time solar terminator coordinates. | Three.js, WebGL Shader Engine |
+| **River** | **HydroRIVERS Reach Routing** | Topological stream tracing across 8.5 million river segments with Strahler stream orders (1–9), gradient, and distance to mouth. | Lehner & Grill (2013), WWF HydroSHEDS |
+| **River** | **GloFAS Flow Hydrographs** | Real-time daily river discharge timeseries ($m^3/s$) with historical return period flood threshold anomaly detection. | Harrigan et al. (ESSD 2020), Copernicus EMS |
+| **River** | **Sentinel-2 Water Quality** | Multispectral radiometric extraction of turbidity (Dogliotti FNU) and algal bloom chlorophyll-a (NDCI). | Mishra (2012), Dogliotti (2015) |
+| **Hydropower** | **Dam Atlas & Siting Engine** | Run-of-the-river power potential screening using hydraulic head ($H$) from Copernicus GLO-30 DEM and discharge ($Q$). | $P = \eta \cdot \rho \cdot g \cdot Q \cdot H$ |
+| **Hydropower** | **City Power Planner** | Matches urban municipal electrical demand (MW) against candidate upstream river dams within a configurable radius. | Open-Meteo Geocoding, HydroRIVERS |
+| **Hazards** | **Hazard Lens (Gemma 4)** | Multimodal reasoning engine correlating satellite imagery with concurrent flood, seismic, and terrain slope telemetry. | Google Gemma 4 via Amazon Bedrock / AI Studio |
+| **Intelligence** | **Planetary Overview HUD** | Aggregated executive telemetry monitoring basin runoff peaks, global deforestation rates, and seismic buffers. | Earth Intelligence Overview Engine |
+| **Intelligence** | **Site Evidence Dossiers** | Multi-domain investigative briefs with one-click forensic JSON export for environmental compliance audits. | `/api/v1/reports` Service |
+
+---
+
+## 4. Visual Showcase
+
+The screenshots below are authentic captures of the Earth Intelligence platform running on the local Node.js microkernel (`localhost:8080`):
 
 <div align="center">
   <table>
     <tr>
       <td width="50%">
-        <img src="docs/assets/earth_intelligence_logo.jpg" alt="Earth Intelligence Geometric Emblem" width="100%" style="border-radius: 8px;"/>
-        <p align="center"><em>Geometric Satellite & Environmental Core Emblem</em></p>
+        <img src="docs/assets/screen_overview.jpg" alt="Planetary Observation Overview HUD" width="100%" style="border-radius: 8px;"/>
+        <p align="center"><strong>Planetary Observation Overview HUD</strong><br><em>Executive summary tracking monitored basins, peak discharge, and verified provider freshness.</em></p>
       </td>
       <td width="50%">
-        <img src="docs/assets/earth_intelligence_hero.jpg" alt="Planetary Observation Interface" width="100%" style="border-radius: 8px;"/>
-        <p align="center"><em>Unified Command Header & Multi-Basin Overview HUD</em></p>
+        <img src="docs/assets/screen_forest.jpg" alt="Forest Intelligence with 3D Globe" width="100%" style="border-radius: 8px;"/>
+        <p align="center"><strong>Forest Intelligence (3D Globe & Canopy Engine)</strong><br><em>Hansen/UMD 30m forest loss analysis, carbon emissions, and interactive WebGL globe.</em></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <img src="docs/assets/screen_river.jpg" alt="River Intelligence & Dam Siting" width="100%" style="border-radius: 8px;"/>
+        <p align="center"><strong>River Intelligence & City Power Planner</strong><br><em>HydroRIVERS topological network, GloFAS daily discharge, and hydropower cascade matching.</em></p>
+      </td>
+      <td width="50%">
+        <img src="docs/assets/screen_hazard.jpg" alt="Hazard Lens Gemma 4 Multimodal Synthesis" width="100%" style="border-radius: 8px;"/>
+        <p align="center"><strong>Hazard Lens (Gemma 4 Multimodal Synthesis)</strong><br><em>Multimodal satellite imagery inspection coupled with live flood, seismic, and terrain telemetry.</em></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <img src="docs/assets/screen_reports.jpg" alt="Site Evidence Dossier" width="70%" style="border-radius: 8px;"/>
+        <p align="center"><strong>Site Evidence Dossier Modal</strong><br><em>Forensic breakdown separating ground observations, derived indices, and AI reasoning with JSON export.</em></p>
       </td>
     </tr>
   </table>
@@ -73,175 +175,217 @@ Earth Intelligence enforces **transparent evidence hierarchy**:
 
 ---
 
-## 3. Core Capabilities
+## 5. How It Works
 
-### 🌳 Forest Intelligence (Forest Subsystem)
-- **Hansen / UMD Global Forest Change (v1.11):** 30-meter resolution annual tree cover loss tracking (2001–2024).
-- **Carbon Flux Estimation:** Above-ground biomass emissions ($Mg\ CO_2e$) and 40-year seedling recovery calculations.
-- **3D Interactive WebGL Earth:** Global spatial navigation powered by Three.js with multi-layer biome overlays.
-- **Treeko Environmental Assistant:** Interactive conversational agent providing ecological context on demand.
+The platform operates as a high-efficiency environmental pipeline:
 
-### 🌊 River Intelligence (Hydrology & Infrastructure Subsystem)
-- **HydroRIVERS v1.0 Network:** Instant spatial indexing of 8.5 million river reaches with Strahler stream orders (1–9).
-- **GloFAS v4.0 Flow Reanalysis:** Daily runoff timeseries, flood return period anomalies, and upstream drainage area routing.
-- **Sentinel-2 Water Quality:** Multi-spectral radiometric extraction of turbidity (Dogliotti algorithm) and chlorophyll-a (NDCI).
-- **City Power Planner:** Multi-objective renewable energy matching algorithm connecting urban electricity demand with viable river cascade dams.
-- **Dam Atlas & Site Screener:** Run-of-the-river power output estimation ($P = \eta \cdot \rho \cdot g \cdot Q \cdot H$), hydraulic head profiling from Copernicus GLO-30 DEM, and geological buffer validation.
-
-### ✦ Hazard Lens (Gemma 4 Multimodal Environmental Reasoning)
-- **Multimodal Visual Inspection:** Ingests Sentinel-2 multispectral imagery alongside contemporaneous hydro-meteorological indicators.
-- **Cross-Domain Correlation:** Detects complex cascading risks (e.g., deforestation-induced slope destabilization coupled with heavy precipitation and river gorge siltation).
-- **Transparent Epistemic Guardrails:** Model responses are strictly labeled as analytical hypotheses; ground observations are explicitly displayed in parallel.
-
-### 📋 Evidence Dossiers & Overview HUD
-- **Real-Time Overview Telemetry:** Global KPIs aggregating monitored basins, flow discharge peaks, and seismic events.
-- **Site Evidence Dossier:** Multi-domain forensic briefs with exportable JSON records for academic and regulatory audits.
-
----
-
-## 4. Architecture
-
-```mermaid
-graph TB
-    subgraph Client ["Browser Command Suite (Single-Page App)"]
-        UI["Master Command Header<br/>(Vector SVG Icon System)"]
-        Three["WebGL 3D Globe<br/>(Three.js)"]
-        Leaflet["Geospatial Map<br/>(Leaflet + TopoJSON)"]
-        HUD["Overview & Dossier Modals<br/>(Real-Time API Sync)"]
-        Canvas["Fluid Transition Engine<br/>(Canvas2D Dual Particle System)"]
-    end
-
-    subgraph Server ["Earth Intelligence Microkernel (Node.js 22+ Zero-Dep)"]
-        HTTP["HTTP / Static Server<br/>(Zero NPM Dependencies)"]
-        Sec["Security Middleware<br/>(CSP, Sliding-Window RateLimiter, Coord Validation)"]
-        OverviewAPI["Overview & Dossier Service<br/>(Multi-Domain Aggregator)"]
-        RiverEngine["Hydrology Routing Engine<br/>(HydroRIVERS Spatial Binary)"]
-        SiteEngine["Site Condition Evaluator<br/>(SoilGrids, Elevation, Weather)"]
-        DamEngine["Hydropower Screener<br/>(P = η · ρ · g · Q · H)"]
-        GemmaBridge["Gemma 4 Multimodal Bridge<br/>(Bedrock → AI Studio → Fallback)"]
-    end
-
-    subgraph Data ["Precompiled Spatial Binaries & Benchmarks"]
-        HydroBin["hydrorivers.bin<br/>(8.5M River Reaches)"]
-        SoilBin["soil_india.bin<br/>(Multi-Depth Soil Properties)"]
-        CSV["Benchmark Datasets<br/>(Hansen, GloFAS, USGS, Places)"]
-    end
-
-    subgraph External ["External Environmental & AI Providers"]
-        GloFAS["Copernicus EMS GloFAS v4<br/>(Open-Meteo Gateway)"]
-        USGS["USGS ANSS Catalog<br/>(Near-Real-Time Seismicity)"]
-        S2["ESA Sentinel-2 STAC<br/>(Planetary Computer / CDSE)"]
-        DEM["Copernicus GLO-30 DEM<br/>(AWS Terrain Tiles)"]
-        Bedrock["Amazon Bedrock<br/>(Gemma 4 26B-A4B-IT)"]
-        AIStudio["Google AI Studio<br/>(Gemma 4 / Gemini Fallback)"]
-    end
-
-    UI --> Sec
-    HUD --> OverviewAPI
-    Three --> Sec
-    Leaflet --> Sec
-
-    Sec --> HTTP
-    HTTP --> OverviewAPI
-    HTTP --> RiverEngine
-    HTTP --> SiteEngine
-    HTTP --> DamEngine
-    HTTP --> GemmaBridge
-
-    RiverEngine --> HydroBin
-    SiteEngine --> SoilBin
-    OverviewAPI --> CSV
-
-    SiteEngine --> GloFAS
-    SiteEngine --> USGS
-    SiteEngine --> DEM
-    GemmaBridge --> Bedrock
-    GemmaBridge --> AIStudio
-    DamEngine --> S2
+```
+[User Action / Query]
+        │
+        ▼
+[Master Command Suite UI]
+   • Dynamic Leaflet / Three.js Canvas
+   • EarthIcons SVG Geometry Renderer
+   • Keyboard Coordinator ([T] Switch, [O] Overview, [D] Dossier, [H] Lens)
+        │
+        ▼ (HTTP REST / JSON)
+[Security Guard & Middleware]
+   • Coordinate Bounds Validator (Lat [-90,90], Lon [-180,180])
+   • Sliding-Window Rate Limiter (25-150 req/min based on endpoint tier)
+   • Strict Content Security Policy (CSP) & CORS Enforcement
+        │
+        ▼
+[Earth Intelligence Microkernel (server.js)]
+   ├─► Precompiled Spatial Binaries (hydrorivers.bin, soil_india.bin)
+   ├─► External APIs (GloFAS v4, USGS ANSS, Copernicus DEM, Open-Meteo)
+   ├─► Deterministic Physics Engines (Hydro Dam, Water Radiometry, Reforestation)
+   └─► Gemma 4 AI Bridge (Bedrock → AI Studio → Gemini Fallback)
+        │
+        ▼
+[Standardized JSON Payload]
+   • Observed Metrics (Raw Physical Data)
+   • Calculated Indicators (Formulas)
+   • AI Synthesis & Disclaimers
 ```
 
 ---
 
-## 5. Data Flow
+## 6. System Architecture
+
+```mermaid
+graph TB
+    subgraph Client ["Client Tier: Browser Command Suite"]
+        Header["Command Suite Header<br/>(EarthIcons Vector System)"]
+        Globe["3D Earth Globe<br/>(Three.js WebGL)"]
+        RiverMap["Hydrology GIS Map<br/>(Leaflet + TopoJSON)"]
+        HUD["Overview & Dossier Modals<br/>(DOM Overlay System)"]
+        TransitionEngine["Fluid Nature-Water Engine<br/>(Canvas2D Particles)"]
+    end
+
+    subgraph Security ["Security & Validation Tier"]
+        CSP["Content Security Policy<br/>(Strict Script/Frame Directives)"]
+        RateLimiter["Sliding-Window Rate Limiter<br/>(Tiered: 25 / 40 / 150 req/min)"]
+        Sanitizer["Coordinate & Input Sanitizer<br/>(SSRF & Buffer Guard)"]
+        ErrorHandler["Sanitized Error Handler<br/>(Zero Stack Leakage)"]
+    end
+
+    subgraph Server ["Server Tier: Zero-Dependency Node.js Microkernel"]
+        ServerCore["HTTP Server Core (server.js)<br/>(Built-in http, fs, zlib, path)"]
+        OverviewAPI["Overview & Dossier Service<br/>(overview-api.js)"]
+        RiversAPI["HydroRIVERS Spatial Engine<br/>(rivers.js)"]
+        SiteAPI["Site Conditions Evaluator<br/>(site.js, soil.js, elevation.js)"]
+        DamAPI["Hydropower & Power Planner<br/>(dam.js)"]
+        WaterAPI["Sentinel-2 Radiometry Engine<br/>(water.js, water-snap.js)"]
+        GemmaBridge["Gemma 4 Multimodal Bridge<br/>(gemma.js, hazard.js)"]
+    end
+
+    subgraph SpatialData ["Local Data Tier: Precompiled Spatial Binaries"]
+        HydroBin["hydrorivers.bin<br/>(998,251 Topological Reaches)"]
+        SoilBin["soil_india.bin<br/>(Multi-Depth Soil Grids)"]
+        CSVData["Benchmark Data Exports<br/>(Hansen, GloFAS, USGS, Places)"]
+    end
+
+    subgraph ExternalProviders ["External Scientific Data & AI Providers"]
+        GloFAS["Copernicus GloFAS v4<br/>(Daily Flow Hydrographs)"]
+        USGS["USGS ANSS Catalog<br/>(Seismic Event Buffer)"]
+        CopernicusDEM["Copernicus GLO-30 DEM<br/>(AWS Terrain Tiles)"]
+        SentinelSTAC["ESA Sentinel-2 STAC<br/>(Surface Reflectance)"]
+        Bedrock["Amazon Bedrock<br/>(Gemma 4 26B-A4B-IT)"]
+        AIStudio["Google AI Studio<br/>(Gemma 4 / Gemini Backup)"]
+    end
+
+    Header --> Security
+    Globe --> Security
+    RiverMap --> Security
+    HUD --> Security
+
+    Security --> ServerCore
+
+    ServerCore --> OverviewAPI
+    ServerCore --> RiversAPI
+    ServerCore --> SiteAPI
+    ServerCore --> DamAPI
+    ServerCore --> WaterAPI
+    ServerCore --> GemmaBridge
+
+    OverviewAPI --> CSVData
+    RiversAPI --> HydroBin
+    SiteAPI --> SoilBin
+    SiteAPI --> GloFAS
+    SiteAPI --> USGS
+    SiteAPI --> CopernicusDEM
+    DamAPI --> CopernicusDEM
+    WaterAPI --> SentinelSTAC
+    GemmaBridge --> Bedrock
+    GemmaBridge --> AIStudio
+```
+
+---
+
+## 7. Data Flow Lifecycle
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as Environmental Analyst
-    participant Client as Command Suite UI
-    participant Sec as Security Guard & Rate Limiter
-    participant Server as Node.js Microkernel
-    participant Binary as HydroRIVERS / Soil Binaries
-    participant Ext as GloFAS / USGS / Copernicus
+    actor Analyst as Environmental Analyst
+    participant UI as Command Suite Frontend
+    participant Sec as Security Guard (security.js)
+    participant Core as Server Microkernel (server.js)
+    participant Spatial as HydroRIVERS Binary Index
+    participant Ext as External Science APIs (GloFAS/USGS)
     participant AI as Gemma 4 Inference Engine
 
-    User->>Client: Request Evidence Dossier (e.g. Amazon / Tapajós)
-    Client->>Sec: GET /api/v1/reports?place=tapajos
-    Sec->>Sec: Validate parameter bounds & check client rate limit
-    Sec->>Server: Forward verified request
-    Server->>Binary: Query nearest reach ID & upstream area
-    Server->>Ext: Fetch current runoff & seismic buffer
-    Server->>Server: Compute deterministic indicators (P = η·ρ·g·Q·H)
-    Server->>AI: Synthesize multimodal context (if AI requested)
-    AI-->>Server: Return structured analytical hypothesis
-    Server-->>Client: 200 OK (Observed Metrics + Derived Risk + Model Notes)
-    Client->>User: Render Interactive Dossier with JSON Export
+    Analyst->>UI: Selects Monitored Basin (e.g. Brahmaputra / Guwahati)
+    UI->>Sec: GET /api/v1/reports?place=guwahati
+    Sec->>Sec: Verify Lat/Lon bounds & Sliding-Window Quota
+    Sec->>Core: Forward Sanitized Request
+    Core->>Spatial: Lookup Nearest River Reach & Upstream Catchment
+    Spatial-->>Core: Reach ID 502941, Order 8, Flow 19,420 m³/s
+    Core->>Ext: Query Active GloFAS Runoff & USGS M5+ Quakes (250km)
+    Ext-->>Core: Daily Runoff Timeseries & Seismic Events
+    Core->>Core: Compute Hydro Potential: P = η·ρ·g·Q·H
+    alt Multimodal Analysis Requested
+        Core->>AI: Send Multi-Spectral Image + Spatial Telemetry Payload
+        AI-->>Core: Return Synthesized Reasoning Hypotheses
+    end
+    Core-->>UI: 200 OK (Observed Data + Formulas + AI Synthesis)
+    UI->>Analyst: Render Forensic Evidence Dossier & Enable JSON Export
 ```
 
 ---
 
-## 6. Technology Stack
+## 8. Technology Stack
 
-| Layer | Technologies & Implementations | Rationale |
-|---|---|---|
-| **Backend Runtime** | Node.js 22+ LTS (Native `http`, `fs`, `path`, `zlib`, native `fetch`) | **Zero runtime npm dependencies** — zero supply chain risk, sub-10ms startup time, ultra-low memory footprint. |
-| **Security Layer** | Custom Sliding-Window RateLimiter, Strict CSP Headers, Coordinate Validator | Defense-in-depth against resource exhaustion, SSRF, XSS, and frame injection. |
-| **Multimodal AI** | Google Gemma 4 (`gemma-4-26b-a4b-it`) via Amazon Bedrock & Google AI Studio | State-of-the-art open reasoning model reading satellite imagery alongside numerical spatial metrics. |
-| **Frontend Framework** | Vanilla Modern JavaScript (ES2022+), HTML5 Semantic Shell, Vanilla CSS | Maximum rendering performance, no hydration overhead, instantaneous navigation. |
-| **3D & Geospatial** | Three.js (WebGL Earth), Leaflet.js, TopoJSON, Canvas2D fluid particles | Smooth 60fps globe rotation, vector river tracing, and cinematic nature-to-water viewport transitions. |
-| **Iconography** | EarthIcons Vector SVG Library (`frontend/assets/icons.js`) | Replaces all non-standard emoji characters with accessible, scalable, crisp vector symbols. |
-| **Spatial Datasets** | WWF HydroRIVERS v1.0, Copernicus GloFAS v4, Hansen UMD, USGS ANSS, ISRIC SoilGrids 2.0 | Scientifically verified, peer-reviewed global data baselines. |
+### Backend Architecture
+- **Language & Runtime:** JavaScript (Node.js 22+ LTS).
+- **Zero Runtime Dependencies:** Built strictly using native Node.js core modules:
+  - `node:http` — Fast, non-blocking HTTP microkernel.
+  - `node:fs` / `node:path` — File system spatial binary streaming.
+  - `node:zlib` — On-the-fly Gzip compression for static assets and API responses.
+  - Native `fetch` — Standardized HTTP queries to upstream scientific data feeds.
+- **Security Middleware:** Custom sliding-window rate limiter, CSP injector, coordinate validator.
+
+### Frontend Architecture
+- **Languages:** Semantic HTML5, Vanilla ES2022+ JavaScript, CSS3 Design Tokens.
+- **3D Geospatial Engine:** Three.js (WebGL Earth Globe with custom atmospheric shaders).
+- **2D Mapping & Hydrology GIS:** Leaflet.js with TopoJSON vector layers and Canvas overlay.
+- **Fluid Transition Engine:** Dual-particle particle physics engine rendering fluid nature-to-water canopy transitions on Canvas2D.
+- **Iconography:** Purpose-engineered `EarthIcons` vector SVG system (`frontend/assets/icons.js`).
 
 ---
 
-## 7. Repository Structure
+## 9. Repository Structure
 
 ```
 Earth Intelligence/
-├── .env.example               # Environment template with documented placeholders
-├── .gitignore                  # Git hygiene exclusions (secrets, logs, OS files)
+├── .env.example               # Environment variables configuration template
+├── .gitignore                  # Git hygiene (excludes secrets, logs, binaries, caches)
+├── LICENSE                     # MIT License + Open Data Scientific Terms
+├── package.json               # Manifest with zero runtime dependencies & test script
 ├── render.yaml                # Production deployment blueprint (Render Free Tier)
-├── package.json               # Package manifest, zero dependencies, npm test scripts
 ├── README.md                  # Comprehensive product documentation
-├── docs/                      # Documentation assets
-│   └── assets/                # Logos, SVGs, and architecture graphics
-├── frontend/                  # High-performance client-side command suite
-│   ├── index.html             # Master Command Suite Shell (Overview, Viewports, Dossiers)
-│   ├── favicon.svg            # Mathematical vector SVG favicon
-│   ├── transition.css         # Master aerospace dark glass theme
-│   ├── transition.js          # Nature-water dual particle canvas transition engine
-│   ├── assets/                # Shared vector icons and brand marks
-│   │   ├── icons.js           # EarthIcons SVG icon registry
-│   │   ├── icons.css          # Vector icon styles & status pulses
-│   │   └── logo.svg           # Scalable vector brand emblem
-│   ├── forest-eyes/           # Forest Intelligence Subsystem (3D Globe & Hansen GFW)
-│   ├── river-eyes/            # River Intelligence Subsystem (HydroRIVERS, Power, Dams)
-│   └── hazard/                # Hazard Lens Subsystem (Gemma 4 Multimodal Studio)
-└── backend/                   # Zero-dependency Node.js server & services
-    ├── server.js              # HTTP server, routing, and static file distributor
-    ├── security.js            # Security middleware (CSP, RateLimiter, Coord Validator)
+├── docs/                      # Documentation graphics & assets
+│   └── assets/                # Logos, SVGs, and authentic application screenshots
+│       ├── logo.svg           # Scalable vector brand emblem
+│       ├── earth_intelligence_hero.svg # Vector wide hero banner
+│       ├── screen_overview.jpg# Overview HUD screenshot
+│       ├── screen_forest.jpg  # Forest Intelligence screenshot
+│       ├── screen_river.jpg   # River Intelligence screenshot
+│       ├── screen_hazard.jpg  # Hazard Lens screenshot
+│       └── screen_reports.jpg # Evidence Dossier screenshot
+├── frontend/                  # Single-Page Command Suite (served statically)
+│   ├── index.html             # Master Command Suite Shell
+│   ├── favicon.svg            # Scalable vector favicon
+│   ├── transition.css         # Master theme stylesheet & glassmorphism tokens
+│   ├── transition.js          # Nature-to-water dual canvas transition engine
+│   ├── assets/                # Client vector icons and branding
+│   │   ├── icons.js           # EarthIcons original SVG vector registry
+│   │   ├── icons.css          # Optical alignment, sizing, and pulse styles
+│   │   └── logo.svg           # Core brand mark
+│   ├── forest-eyes/           # Forest Intelligence Subsystem
+│   │   ├── index.html         # 3D Globe & Deforestation interface
+│   │   ├── app.js             # Hansen GFW analytics & UI coordinator
+│   │   ├── globe-layers.js    # Three.js biome, cloud, and contour shaders
+│   │   └── treeko-chat.js     # Ecological conversational assistant
+│   ├── river-eyes/            # River Intelligence Subsystem
+│   │   └── index.html         # HydroRIVERS network, City Power, Dam Atlas
+│   └── hazard/                # Hazard Lens Subsystem
+│       └── index.html         # Multimodal Gemma 4 environmental reasoning
+└── backend/                   # Zero-dependency Node.js Microkernel
+    ├── server.js              # Master HTTP server, static file router, API dispatcher
+    ├── security.js            # CSP headers, sliding-window rate limiting, input guards
     ├── overview-api.js        # Overview KPI calculator & site dossier generator
-    ├── gemma.js               # Multi-provider Gemma 4 client (Bedrock & AI Studio)
+    ├── gemma.js               # Multi-provider Gemma 4 client (Bedrock / AI Studio)
     ├── hazard.js              # Multimodal hazard ingestion & prompt orchestrator
     ├── rivers.js              # HydroRIVERS spatial search and stream tracing
     ├── dam.js                 # Hydropower screening & City Power Planner engine
-    ├── water.js               # Sentinel-2 water quality (Turbidity, Chlorophyll-a)
+    ├── water.js               # Sentinel-2 radiometric water quality (Turbidity/NDCI)
     ├── water-snap.js          # Surface water alignment (JRC Global Surface Water)
     ├── site.js                # Integrated site analysis (Soil, Quakes, Flow)
     ├── soil.js                # High-speed spatial query for ISRIC SoilGrids
     ├── elevation.js           # Hydraulic head & terrain slope from AWS Terrain Tiles
     ├── forest-api.js          # Forest API proxy & Treeko chat handler
-    ├── test/                  # Automated verification & test suite
+    ├── test/                  # Automated verification test suite
     │   └── test-server.js     # 5-stage automated test runner
     ├── data/                  # Precompiled binary spatial indexes (hydrorivers.bin)
     └── datasets/              # Benchmark historical CSVs, sources, and licenses
@@ -249,52 +393,57 @@ Earth Intelligence/
 
 ---
 
-## 8. Getting Started
+## 10. Prerequisites
 
-### Prerequisites
-- **Node.js 22.0.0 or higher** (uses native `fetch` and modern ES modules).
-- Modern web browser (Chrome, Edge, Firefox, Safari) with WebGL enabled.
-- No npm package installations are required!
+- **Node.js:** Version `22.0.0` LTS or higher (required for native `fetch` and modern ES module support).
+- **Operating System:** Linux, macOS, or Windows (WSL recommended).
+- **Web Browser:** Any modern evergreen browser (Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge) with WebGL enabled.
+- **NPM Packages:** None required for runtime!
 
-### Setup Instructions
+---
+
+## 11. Installation & Quick Start
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/shauryatiwari/earth-intelligence.git
-cd earth-intelligence
+cd "earth-intelligence"
 
 # 2. Configure environment variables (optional for baseline features)
 cp .env.example .env
-# Edit .env to add your GEMINI_API_KEY or AWS Bedrock credentials if using live Gemma 4
+# Edit .env to add your GEMINI_API_KEY or AWS Bedrock keys for live AI reasoning
 
 # 3. Execute the automated verification test suite
 npm test
 
-# 4. Launch the Earth Intelligence server
+# 4. Start the Earth Intelligence platform
 npm start
 ```
 
-### Accessing the Platform
+### Accessing the Suite
 Open your browser to:
 **`http://localhost:8080`**
 
-Direct Deep-Links:
-- `http://localhost:8080#river` — Opens River Intelligence immediately.
-- `http://localhost:8080#lens` — Activates Hazard Lens (Gemma 4 Multimodal Analysis).
-- `http://localhost:8080#overview` — Launches the Planetary Observation Overview HUD.
-- `http://localhost:8080#reports` — Opens Site Evidence Dossiers.
-- `http://localhost:8080/river-eyes/index.html#plan` — Launches the City Power Planner interactive demo.
+### Direct Viewport Deep-Links
+- **Planetary Overview:** `http://localhost:8080#overview`
+- **Forest Intelligence:** `http://localhost:8080`
+- **River Intelligence:** `http://localhost:8080#river`
+- **Hazard Lens (Gemma 4):** `http://localhost:8080#lens`
+- **Evidence Dossiers:** `http://localhost:8080#reports`
+- **City Power Planner Demo:** `http://localhost:8080/river-eyes/index.html#plan`
 
 ---
 
-## 9. Environment Variables
+## 12. Configuration & Environment Variables
+
+All configuration is managed via standard environment variables or a local `.env` file. Placeholders only; never commit real credentials.
 
 | Variable | Description | Required? | Default / Notes |
 |---|---|---|---|
 | `PORT` | Local HTTP port for the microkernel | No | `8080` |
 | `NODE_ENV` | Runtime environment mode | No | `development` |
-| `GEMINI_API_KEY` | Google AI Studio key for Gemma 4 & Gemini fallback | Optional | Enables live AI reasoning in Treeko, Aqua, and Hazard Lens |
-| `GEMMA_MODELS` | Comma-separated prioritized list of Gemma 4 model IDs | No | `gemma-4-26b-a4b-it,gemma-4-31b-it` |
+| `GEMINI_API_KEY` | Google AI Studio key for Gemma 4 & Gemini fallback | Optional | Enables live AI reasoning in Hazard Lens and Treeko |
+| `GEMMA_MODELS` | Prioritized list of Gemma 4 model IDs | No | `gemma-4-26b-a4b-it,gemma-4-31b-it` |
 | `GEMINI_FALLBACK_MODEL`| Secondary fallback models for high-concurrency periods | No | `gemini-3.5-flash,gemini-3.1-flash-lite` |
 | `BEDROCK_API_KEY` | AWS Bedrock API key for enterprise Gemma 4 inference | Optional | Tried before Google AI Studio if present |
 | `BEDROCK_REGION` | AWS Region for Bedrock deployment | No | `us-east-1` |
@@ -304,41 +453,41 @@ Direct Deep-Links:
 
 ---
 
-## 10. API Documentation
+## 13. API Reference
 
-All endpoints return HTTP security headers and enforce sliding-window rate limiting.
+All API routes enforce Content Security Policy headers, strict coordinate bounds checking, and sliding-window rate limiting.
 
-### 1. System & Overview APIs
+### 1. Platform & Overview Services
 
 #### `GET /api/v1/health`
-Returns the microkernel operational status, uptime, and memory consumption.
+Returns operational telemetry, system uptime, and memory metrics.
 - **Rate Limit:** 150 requests/min
-- **Response Example:**
+- **Response Schema:**
   ```json
   {
-    "status": "ok",
+    "status": "HEALTHY",
+    "service": "Earth Intelligence Platform",
     "version": "3.0.0",
-    "service": "Earth Intelligence",
-    "uptime_seconds": 142.5,
-    "memory_mb": 42.1
+    "security": { "rateLimiting": "ACTIVE", "contentSecurityPolicy": "ACTIVE" },
+    "datasets": { "hydrorivers": "ONLINE (998,251 reaches)", "glofas": "ONLINE" }
   }
   ```
 
 #### `GET /api/v1/overview`
 Aggregates planetary observation metrics across all monitored benchmarks.
 - **Rate Limit:** 150 requests/min
-- **Response:** Summary object containing monitored basin count, peak discharge ($m^3/s$), cumulative tree loss ($ha$), recent seismic events, and verified data provider freshness timestamps.
+- **Response Schema:** Contains `summary` object (basins monitored count, cumulative tree loss in hectares, peak flow runoff in $m^3/s$, recent earthquakes count) and `data_freshness` timestamps.
 
 #### `GET /api/v1/reports?place={place_id}`
 Returns a multi-domain forensic evidence dossier for a specific benchmark site.
-- **Parameters:** `place` (e.g. `tapajos`, `malebo`, `guwahati`, `lorelei`, `sikkim`)
+- **Parameters:** `place` (`tapajos`, `malebo`, `guwahati`, `lorelei`, `sikkim`, `chamoli`)
 - **Rate Limit:** 150 requests/min
-- **Response Structure:**
-  - `observed_metrics`: Exact physical measurements from Hansen GFW, HydroRIVERS, GloFAS v4, and USGS.
-  - `calculated_indicators`: Derived indices including theoretical hydro power ($P=\eta\rho g Q H$) and soil erosion risk.
+- **Response Schema:**
+  - `observed_metrics`: Exact measurements from Hansen GFW, HydroRIVERS, GloFAS v4, and USGS.
+  - `calculated_indicators`: Derived indices including theoretical hydro power ($P=\eta\rho g Q H$) and soil erosion tier.
   - `ai_interpretation`: Contextual reasoning synthesized by Gemma 4 with transparency disclosures.
 
-### 2. Hydrology & Geospatial APIs
+### 2. Hydrology & Geospatial Services
 
 #### `GET /api/v1/rivers/nearest?lat={lat}&lon={lon}`
 Finds the nearest HydroRIVERS reach to the given coordinate with topological routing metadata.
@@ -347,7 +496,7 @@ Finds the nearest HydroRIVERS reach to the given coordinate with topological rou
 - **Response:** Reach ID, Strahler stream order (1–9), upstream catchment area ($km^2$), distance to ocean mouth ($km$), and mean annual discharge ($m^3/s$).
 
 #### `GET /api/v1/site?lat={lat}&lon={lon}`
-Returns integrated site conditions: GloFAS daily discharge, ISRIC SoilGrids profile, and USGS earthquakes within a 250 km radius.
+Returns integrated site conditions: GloFAS daily discharge timeseries, ISRIC SoilGrids profile, and USGS earthquakes within a 250 km radius.
 - **Rate Limit:** 40 requests/min
 
 #### `GET /api/v1/water-quality?lat={lat}&lon={lon}`
@@ -369,102 +518,108 @@ Coordinates multimodal environmental analysis using Gemma 4.
 
 ---
 
-## 11. Security Posture
+## 14. Scientific Data Sources & Attribution
 
-Earth Intelligence implements application security best practices designed for critical geospatial infrastructure:
+Earth Intelligence is built upon open scientific data. We gratefully acknowledge and cite the peer-reviewed sources:
 
-1. **Content Security Policy (CSP):**
-   - Restricts script and object execution to `self` and verified CDN origins (Unpkg for Leaflet/Three.js, Google Fonts).
-   - Enforces `frame-ancestors 'self'` to protect against clickjacking attacks.
-   - Enforces `X-Content-Type-Options: nosniff` and `Referrer-Policy: strict-origin-when-cross-origin`.
-2. **Sliding-Window Rate Limiting:**
-   - In-memory sliding window tracking prevents brute-force scraping and API denial-of-service.
-   - Tiered limits: AI endpoints (`25 req/min`), Compute & DEM lookups (`40 req/min`), Standard queries (`150 req/min`).
-3. **Rigorous Coordinate & Input Validation:**
-   - Latitude strictly bound to $[-90.0, +90.0]$; Longitude strictly bound to $[-180.0, +180.0]$.
-   - Rejects non-finite values, NaN, and buffer overflow attempts before reaching spatial query algorithms.
-4. **Zero Client-Exposed Credentials:**
-   - All AI keys (Gemini, Bedrock) and external tokens remain strictly server-side.
-   - Client bundles contain zero API keys, secrets, or privileged service tokens.
-5. **Safe Error Handling:**
-   - Internal stack traces, server filesystem paths, and raw upstream vendor errors are intercepted and sanitized before returning to clients.
+1. **Global River Hydrography (HydroRIVERS v1.0 / HydroSHEDS):**
+   Lehner, B., & Grill, G. (2013). *Global river hydrography and catchment delineations: Baseline data and new approaches to study the world's large river systems.* Hydrological Processes, 27(15), 2171–2186. [DOI: 10.1002/hyp.9740](https://doi.org/10.1002/hyp.9740).
+   *Licensing:* Free for non-commercial, educational, and scientific research use under HydroSHEDS terms.
 
-### Vulnerability Reporting
-To report a security vulnerability or inquiry, please open a confidential issue or contact the maintainers directly. Verified security reports are addressed within 48 hours.
+2. **Global Tree Cover Dynamics (Hansen / UMD v1.11):**
+   Hansen, M. C., Potapov, P. V., Moore, R., et al. (2013). *High-Resolution Global Maps of 21st-Century Forest Cover Change.* Science, 342(6160), 850–853. [DOI: 10.1126/science.1244693](https://doi.org/10.1126/science.1244693).
+   *Licensing:* Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+3. **Global Flood Awareness System Reanalysis (GloFAS-ERA5 v4.0):**
+   Harrigan, S., Zsoter, E., Alfieri, L., et al. (2020). *GloFAS-ERA5 operational global river discharge reanalysis 1979–present.* Earth System Science Data, 12(3), 2043–2060. [DOI: 10.5194/essd-12-2043-2020](https://doi.org/10.5194/essd-12-2043-2020).
+   *Licensing:* Copernicus Emergency Management Service / ECMWF (CC BY 4.0).
+
+4. **Machine Learning Soil Property Mapping (SoilGrids 2.0):**
+   Poggio, L., de Sousa, L. M., Batjes, N. H., et al. (2021). *SoilGrids 2.0: producing soil property maps with Python and machine learning.* SOIL, 7(1), 217–240. [DOI: 10.5194/soil-7-217-2021](https://doi.org/10.5194/soil-7-217-2021).
+   *Licensing:* International Soil Reference and Information Centre (CC BY 4.0).
+
+5. **Global Surface Water Dynamics (JRC):**
+   Pekel, J.-F., Cottam, A., Gorelick, N., & Belward, A. S. (2016). *High-resolution mapping of global surface water and its long-term changes.* Nature, 540(7633), 418–422. [DOI: 10.1038/nature20584](https://doi.org/10.1038/nature20584).
+   *Licensing:* European Commission Joint Research Centre (JRC).
+
+6. **Earthquake Hazards Program (USGS ANSS):**
+   United States Geological Survey Advanced National Seismic System Comprehensive Earthquake Catalog. Public domain.
 
 ---
 
-## 12. Testing and Verification
+## 15. Testing & Verification
 
-Earth Intelligence includes an automated verification test suite requiring zero dependencies:
+The project includes an automated test runner validating the backend microkernel, security middleware, and calculation pipelines without any third-party test runners:
 
 ```bash
-# Run the automated test suite
 npm test
 ```
 
-The test runner (`backend/test/test-server.js`) systematically validates:
-1. **Coordinate Sanitization:** Rejects out-of-bound latitudes, longitudes, strings, and null inputs.
-2. **Sliding Window Rate Limiter:** Confirms tiered thresholds, sliding eviction, and correct 429 response structures.
-3. **Overview Metrics Engine:** Verifies multi-basin calculations against benchmark CSV datasets.
-4. **Site Evidence Dossier Generator:** Validates schema integrity, unit precision, and AI caveat notices.
-5. **Live Server & HTTP Security Headers:** Spins up a live ephemeral microkernel, checks `/api/v1/health`, verifies CSP and nosniff headers, and gracefully shuts down.
+### Verified Test Stages
+1. **Coordinate Validation Test:** Asserts that out-of-range coordinates ($|lat| > 90$, $|lon| > 180$, `NaN`, string injections) are rejected with HTTP 400.
+2. **Sliding-Window Rate Limiter Test:** Simulates high-frequency request bursts, verifies sliding eviction, and ensures correct HTTP 429 response formatting.
+3. **Overview Metrics Calculation Test:** Validates real aggregations across benchmark datasets (`places.csv`, `tree_cover_loss_demo.csv`, `river_discharge_glofas_demo.csv`).
+4. **Site Evidence Dossier Generation Test:** Confirms schema compliance, unit formatting, and AI transparency disclosures.
+5. **Live Server Endpoints & Security Headers Test:** Spins up an ephemeral server instance, verifies `/api/v1/health`, tests CSP and nosniff headers, checks SVG favicon delivery, and terminates cleanly.
 
 ---
 
-## 13. Scientific Data Sources & Attribution
+## 16. Security Posture
 
-We gratefully acknowledge the researchers, space agencies, and institutions whose open science enables Earth Intelligence:
+- **Content Security Policy (CSP):** Restricts script, frame, and object execution to `self` and verified CDN origins (Unpkg for Leaflet/Three.js, Google Fonts). `frame-ancestors 'self'` guards against clickjacking.
+- **MIME Sniffing Prevention:** `X-Content-Type-Options: nosniff` enforced on all static assets and dynamic API responses.
+- **Tiered Sliding-Window Rate Limiting:** Prevents denial-of-service and quota starvation on compute-heavy routes (`25 req/min` for Gemma 4 AI, `40 req/min` for DEM & site evaluations, `150 req/min` for standard lookups).
+- **Zero Client-Side Credentials:** All Gemma 4 and external API keys are maintained strictly server-side.
+- **Sanitized Error Output:** Internal server stack traces and filesystem paths are intercepted and replaced with clean, structured error responses.
 
-- **HydroRIVERS / HydroSHEDS v1.0:**
-  Lehner, B., & Grill, G. (2013). *Global river hydrography and catchment delineations: Baseline data and new approaches to study the world's large river systems.* Hydrological Processes, 27(15), 2171–2186. [DOI: 10.1002/hyp.9740](https://doi.org/10.1002/hyp.9740)
-- **Global Forest Cover Change (v1.11):**
-  Hansen, M. C., Potapov, P. V., Moore, R., et al. (2013). *High-Resolution Global Maps of 21st-Century Forest Cover Change.* Science, 342(6160), 850–853. [DOI: 10.1126/science.1244693](https://doi.org/10.1126/science.1244693)
-- **GloFAS-ERA5 Global River Discharge Reanalysis:**
-  Harrigan, S., Zsoter, E., Alfieri, L., et al. (2020). *GloFAS-ERA5 operational global river discharge reanalysis 1979–present.* Earth System Science Data, 12(3), 2043–2060. [DOI: 10.5194/essd-12-2043-2020](https://doi.org/10.5194/essd-12-2043-2020)
-- **ISRIC SoilGrids 2.0:**
-  Poggio, L., de Sousa, L. M., Batjes, N. H., et al. (2021). *SoilGrids 2.0: producing soil property maps with Python and machine learning.* SOIL, 7(1), 217–240. [DOI: 10.5194/soil-7-217-2021](https://doi.org/10.5194/soil-7-217-2021)
-- **JRC Global Surface Water:**
-  Pekel, J.-F., Cottam, A., Gorelick, N., & Belward, A. S. (2016). *High-resolution mapping of global surface water and its long-term changes.* Nature, 540(7633), 418–422. [DOI: 10.1038/nature20584](https://doi.org/10.1038/nature20584)
-- **Copernicus Sentinel-2 MSI:**
-  European Space Agency (ESA) Copernicus Sentinel-2 multispectral surface reflectance imagery accessed via Microsoft Planetary Computer and CDSE.
-- **USGS Earthquake Hazards Program:**
-  Advanced National Seismic System (ANSS) Comprehensive Earthquake Catalog.
+### Vulnerability Reporting
+To report a security concern or vulnerability, please contact the maintainers directly or open a private security advisory on GitHub.
 
 ---
 
-## 14. Roadmap
+## 17. Limitations & Uncertainty
+
+1. **Preliminary Screening vs. Certified Engineering:** All hydropower projections, discharge estimations, and flood risks are preliminary screening calculations. They do not replace certified civil engineering site surveys, borehole geotechnical testing, or official municipal disaster directives.
+2. **Upstream Rate Limits:** Live Sentinel-2 radiometric imagery depends on upstream CDSE / Planetary Computer quotas. In the absence of user-supplied credentials, calibrated baseline data is utilized.
+3. **AI Inference Availability:** Live Gemma 4 reasoning requires an active Google AI Studio or Amazon Bedrock API key. When unconfigured, the platform automatically falls back to empirical rule baselines.
+
+---
+
+## 18. Roadmap
 
 ### Completed in v3.0 (Current Release)
 - [x] Unified product identity as **Earth Intelligence**.
-- [x] Complete eradication of emojis across UI in favor of a vector SVG icon library (`EarthIcons`).
+- [x] Custom-engineered `EarthIcons` vector SVG icon system replacing all interface emojis.
 - [x] Zero-dependency Node.js 22+ microkernel with strict CSP and sliding-window rate limiting.
-- [x] Executive Overview HUD and Multi-Domain Evidence Dossiers (`/api/v1/overview`, `/api/v1/reports`).
-- [x] Automated 5-stage test suite validating security, rate limiting, calculations, and HTTP headers.
-- [x] Original vector emblem branding and high-resolution visual assets.
+- [x] Executive Overview HUD and Evidence Dossier drawers (`/api/v1/overview`, `/api/v1/reports`).
+- [x] Automated 5-stage test suite.
+- [x] Genuine application preview screenshots and vector hero banner.
 
 ### Planned for v3.1+
-- [ ] Offline WebAssembly-compiled HydroRIVERS routing directly within the browser client.
-- [ ] GeoTIFF tile generation for local private network deployments without external map tile servers.
-- [ ] Synthetic Aperture Radar (Sentinel-1 SAR) coherence processing for all-weather flood inundation detection.
-- [ ] Multi-lingual localized interfaces for regional conservation teams.
+- [ ] In-browser WebAssembly-compiled HydroRIVERS topological routing for offline field laptops.
+- [ ] Synthetic Aperture Radar (Sentinel-1 SAR) coherence processing for all-weather flood inundation.
+- [ ] Regional language localizations for international conservation teams.
 
 ---
 
-## 15. Contributing
+## 19. Contributing
 
-Contributions from the global environmental intelligence and open-source community are welcome!
-1. Fork the repository and create your feature branch (`git checkout -b feature/environmental-layer`).
-2. Adhere to the **zero-runtime-dependency** policy for the server core.
-3. Ensure all tests pass (`npm test`).
-4. Commit your changes with descriptive, conventional commit messages.
-5. Submit a pull request detailing your scientific methodology and testing evidence.
+We welcome contributions from environmental scientists, geospatial engineers, and open-source developers:
+1. Fork the repository and create your feature branch: `git checkout -b feature/environmental-layer`.
+2. Adhere strictly to the **zero-runtime-dependency** rule for the server core.
+3. Run and pass all tests: `npm test`.
+4. Submit a descriptive Pull Request detailing scientific methodology and testing evidence.
 
 ---
 
-## 16. License & Scientific Disclaimer
+## 20. License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+This platform is licensed as follows:
+- **Application Code:** The software and original vector assets are released under the [MIT License](LICENSE).
+- **Scientific Datasets:** Data layers retain their original open licenses (CC BY 4.0 for Hansen UMD, GloFAS, and SoilGrids; HydroSHEDS Scientific License for HydroRIVERS; US Public Domain for USGS ANSS). See [Scientific Data Sources](#14-scientific-data-sources--attribution) for full attribution.
 
-### Scientific Disclaimer
-*Earth Intelligence is a screening and research intelligence platform. Environmental indices, hazard risk tiers, hydropower projections, and AI-assisted syntheses are analytical estimates designed to direct investigative focus. They do not constitute certified civil engineering designs, legal environmental impact statements, or official government disaster evacuation directives. Critical infrastructure projects must be validated with on-the-ground geophysical surveys and official municipal authorities.*
+---
+
+## 21. Acknowledgements
+
+We express our gratitude to the European Space Agency (ESA), the Copernicus Emergency Management Service, the World Wildlife Fund (WWF), McGill University, the University of Maryland Global Land Analysis & Discovery team, and the USGS Earthquake Hazards Program for making planetary environmental data accessible to all humanity.

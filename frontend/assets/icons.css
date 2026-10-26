@@ -1,40 +1,51 @@
 /**
- * Earth Intelligence — Icon Styling Tokens
+ * Earth Intelligence — Icon Styling Tokens & Visual Geometry
+ * ==========================================================
+ * Standards for precision vector alignment, optical sizing, and status states.
  */
 .ei-icon {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 1.15em;
   height: 1.15em;
   vertical-align: -0.15em;
   flex-shrink: 0;
-  stroke-width: 1.8;
+  stroke-width: 1.75;
+  transition: transform 0.2s ease, stroke 0.2s ease, opacity 0.2s ease;
 }
 
-.ei-icon-sm {
-  width: 14px;
-  height: 14px;
-}
+/* Optical Standard Sizes */
+.ei-icon-xs { width: 12px; height: 12px; }
+.ei-icon-sm { width: 14px; height: 14px; }
+.ei-icon-md { width: 18px; height: 18px; }
+.ei-icon-lg { width: 24px; height: 24px; }
+.ei-icon-xl { width: 32px; height: 32px; }
 
-.ei-icon-md {
-  width: 18px;
-  height: 18px;
-}
+/* Thematic Color Utility Overrides */
+.ei-icon-emerald { color: #10b981; }
+.ei-icon-cyan    { color: #06b6d4; }
+.ei-icon-sky     { color: #38bdf8; }
+.ei-icon-amber   { color: #fbbf24; }
+.ei-icon-rose    { color: #f43f5e; }
+.ei-icon-muted   { color: #94a3b8; }
+.ei-icon-dim     { color: #64748b; }
 
-.ei-icon-lg {
-  width: 24px;
-  height: 24px;
-}
-
-.ei-icon-xl {
-  width: 32px;
-  height: 32px;
-}
-
+/* Status & Interaction States */
 .ei-icon.spin {
   animation: ei-spin 1.2s linear infinite;
 }
 
+.ei-icon.pulse {
+  animation: ei-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @keyframes ei-spin {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ei-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(0.92); }
 }
