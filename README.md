@@ -12,6 +12,7 @@
   </p>
 
   <p align="center">
+    <a href="https://earth-intelligence-58iy.onrender.com/"><img src="https://img.shields.io/badge/Live%20Demo-earth--intelligence.onrender.com-D96B43.svg?style=flat-square&logo=render&logoColor=white" alt="Live Demo on Render"/></a>
     <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-22%2B%20LTS-254735.svg?style=flat-square&logo=node.js&logoColor=F0E9DC" alt="Node.js 22+"/></a>
     <a href="package.json"><img src="https://img.shields.io/badge/NPM%20Dependencies-0%20(Zero%20Runtime)-171916.svg?style=flat-square" alt="Zero Dependencies"/></a>
     <a href="backend/security.js"><img src="https://img.shields.io/badge/Security-Strict%20CSP%20%7C%20Rate--Limited-59745C.svg?style=flat-square" alt="Security Hardened"/></a>
@@ -21,6 +22,7 @@
   </p>
 
   <p align="center">
+    <a href="https://earth-intelligence-58iy.onrender.com/"><strong>🌐 Live Demo</strong></a> •
     <a href="#1-what-is-earth-intelligence">Overview</a> •
     <a href="#2-scientific-evidence-model">Evidence Model</a> •
     <a href="#3-core-capabilities">Capabilities</a> •
@@ -436,16 +438,16 @@ npm start
 ```
 
 ### Accessing the Suite
-Open your browser to:
-**`http://localhost:8080`**
+- **🌐 Live Production Deployment:** **[https://earth-intelligence-58iy.onrender.com](https://earth-intelligence-58iy.onrender.com/)**
+- **💻 Local Development Server:** `http://localhost:8080`
 
 ### Direct Viewport Deep-Links
-- **Planetary Overview:** `http://localhost:8080#overview`
-- **Forest Intelligence:** `http://localhost:8080`
-- **River Intelligence:** `http://localhost:8080#river`
-- **Hazard Lens (Gemma 4):** `http://localhost:8080#lens`
-- **Evidence Dossiers:** `http://localhost:8080#reports`
-- **City Power Planner Demo:** `http://localhost:8080/river-eyes/index.html#plan`
+- **Live Planetary Overview:** [`earth-intelligence-58iy.onrender.com#overview`](https://earth-intelligence-58iy.onrender.com/#overview)
+- **Live Forest Intelligence:** [`earth-intelligence-58iy.onrender.com`](https://earth-intelligence-58iy.onrender.com/)
+- **Live River Intelligence:** [`earth-intelligence-58iy.onrender.com#river`](https://earth-intelligence-58iy.onrender.com/#river)
+- **Live Hazard Lens (Gemma 4):** [`earth-intelligence-58iy.onrender.com#lens`](https://earth-intelligence-58iy.onrender.com/#lens)
+- **Live Evidence Dossiers:** [`earth-intelligence-58iy.onrender.com#reports`](https://earth-intelligence-58iy.onrender.com/#reports)
+- **Live City Power Planner:** [`earth-intelligence-58iy.onrender.com/river-eyes/index.html#plan`](https://earth-intelligence-58iy.onrender.com/river-eyes/index.html#plan)
 
 ---
 
