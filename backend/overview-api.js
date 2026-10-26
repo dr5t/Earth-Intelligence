@@ -73,37 +73,37 @@ function computeOverview() {
 
   // Compute stats per place
   const placeData = places.map(p => {
-    const pTree = treeLoss.filter(r => r.place_id === p.id);
-    const totalLossHa = pTree.reduce((sum, r) => sum + (Number(r.loss_ha) || 0), 0);
-    const totalCo2 = pTree.reduce((sum, r) => sum + (Number(r.co2_emissions_mg) || 0), 0);
+    const id = p.place || p.id || 'site';
+    const pTree = treeLoss.filter(r => r.place === id);
+    const totalLossHa = pTree.reduce((sum, r) => sum + (Number(r.area_ha) || 0), 0);
+    const totalCo2 = pTree.reduce((sum, r) => sum + (Number(r.carbon_emissions_MgCO2e) || 0), 0);
 
-    const pDischarge = discharge.filter(r => r.place_id === p.id);
+    const pDischarge = discharge.filter(r => r.place === id);
     const recentDischarge = pDischarge.slice(-14);
     const avgFlow = recentDischarge.length
-      ? recentDischarge.reduce((s, r) => s + (Number(r.discharge_cms) || 0), 0) / recentDischarge.length
+      ? recentDischarge.reduce((s, r) => s + (Number(r.discharge_m3s) || 0), 0) / recentDischarge.length
       : null;
 
-    const pQuakes = earthquakes.filter(r => r.place_id === p.id);
+    const pQuakes = earthquakes.filter(r => r.place === id);
     const maxQuake = pQuakes.length
-      ? Math.max(...pQuakes.map(q => Number(q.mag) || 0))
+      ? Math.max(...pQuakes.map(q => Number(q.magnitude) || 0))
       : null;
 
-    const pReaches = riverReaches.filter(r => r.place_id === p.id);
-    const mainReach = pReaches[0] || null;
+    const pReaches = riverReaches.filter(r => r.place === id);
 
     return {
-      id: p.id,
-      name: p.name,
+      id,
+      name: p.name || id,
       coordinates: { lat: Number(p.lat), lon: Number(p.lon) },
       treeLoss: {
-        totalHa: Math.round(totalLossHa * 10) / 10,
+        totalHa: Math.round(totalLossHa * 100) / 100,
         totalCo2Mg: Math.round(totalCo2 * 10) / 10,
-        yearsObserved: pTree.map(r => r.year)
+        yearsObserved: [...new Set(pTree.map(r => r.tree_cover_loss_year))].sort()
       },
       hydrology: {
         reachesInVicinity: pReaches.length,
-        primaryRiver: mainReach ? mainReach.river_name || 'Main Channel' : 'HydroRIVERS Segment',
-        recentAvgDischargeCms: avgFlow ? Math.round(avgFlow * 10) / 10 : null
+        primaryRiverReachId: pReaches[0]?.hyriv_id || null,
+        recentAvgDischargeCms: avgFlow ? Math.round(avgFlow * 100) / 100 : null
       },
       seismic: {
         eventsCountM5Plus: pQuakes.length,
@@ -113,8 +113,8 @@ function computeOverview() {
   });
 
   // Global platform metrics
-  const globalTreeLossHa = treeLoss.reduce((sum, r) => sum + (Number(r.loss_ha) || 0), 0);
-  const globalCo2Emitted = treeLoss.reduce((sum, r) => sum + (Number(r.co2_emissions_mg) || 0), 0);
+  const globalTreeLossHa = treeLoss.reduce((sum, r) => sum + (Number(r.area_ha) || 0), 0);
+  const globalCo2Emitted = treeLoss.reduce((sum, r) => sum + (Number(r.carbon_emissions_MgCO2e) || 0), 0);
 
   cachedOverview = {
     platform: 'Earth Intelligence',
@@ -132,7 +132,7 @@ function computeOverview() {
     },
     monitoredLocations: placeData,
     benchmarkMetrics: {
-      totalMonitoredTreeLossHa: Math.round(globalTreeLossHa * 10) / 10,
+      totalMonitoredTreeLossHa: Math.round(globalTreeLossHa * 100) / 100,
       totalMonitoredCo2EmissionsMg: Math.round(globalCo2Emitted * 10) / 10,
       activeObservationNetworks: [
         { name: 'HydroRIVERS v1.0 / HydroSHEDS', status: rivers.available() ? 'OPERATIONAL' : 'OFFLINE', coverage: 'Global (catchment >= 1000 km² / 100 km² India)' },
@@ -156,9 +156,9 @@ function generateReport(placeId) {
     return null;
   }
 
-  const discharge = parseCsv('river_discharge_glofas_demo.csv').filter(r => r.place_id === place.id);
-  const treeLoss = parseCsv('tree_cover_loss_demo.csv').filter(r => r.place_id === place.id);
-  const quakes = parseCsv('earthquakes_usgs_demo.csv').filter(r => r.place_id === place.id);
+  const discharge = parseCsv('river_discharge_glofas_demo.csv').filter(r => r.place === place.id);
+  const treeLoss = parseCsv('tree_cover_loss_demo.csv').filter(r => r.place === place.id);
+  const quakes = parseCsv('earthquakes_usgs_demo.csv').filter(r => r.place === place.id);
 
   return {
     dossierId: `EI-DOSSIER-${place.id.toUpperCase()}-${Date.now().toString(36).toUpperCase()}`,
@@ -166,15 +166,15 @@ function generateReport(placeId) {
     generatedAt: new Date().toISOString(),
     location: place.coordinates,
     summary: {
-      forestStatus: place.treeLoss.totalHa > 500 ? 'Significant Canopy Disturbance' : 'Moderate / Monitored Canopy',
+      forestStatus: place.treeLoss.totalHa > 100 ? 'Significant Canopy Disturbance' : 'Monitored Forest Canopy',
       hydrologyStatus: place.hydrology.recentAvgDischargeCms ? `Normal Basin Routing (${place.hydrology.recentAvgDischargeCms} m³/s)` : 'Estimated Infiltration',
-      seismicRiskScore: quakes.length > 10 ? 'High Seismic Exposure' : 'Low to Moderate Seismic Baseline'
+      seismicRiskScore: quakes.length > 5 ? 'High Historical Seismic Frequency' : 'Low to Moderate Seismic Baseline'
     },
     metrics: place,
     timeSeries: {
-      annualTreeLoss: treeLoss.map(t => ({ year: Number(t.year), lossHa: Number(t.loss_ha), co2Mg: Number(t.co2_emissions_mg) })),
-      recentFlowTrend: discharge.slice(-30).map(d => ({ date: d.date, flowCms: Number(d.discharge_cms) })),
-      seismicHistory: quakes.slice(0, 10).map(q => ({ time: q.time, magnitude: Number(q.mag), depthKm: Number(q.depth_km), distanceKm: Number(q.dist_km) }))
+      annualTreeLoss: treeLoss.map(t => ({ year: Number(t.tree_cover_loss_year), lossHa: Number(t.area_ha), co2Mg: Number(t.carbon_emissions_MgCO2e) })),
+      recentFlowTrend: discharge.slice(-30).map(d => ({ date: d.date, flowM3s: Number(d.discharge_m3s) })),
+      seismicHistory: quakes.slice(0, 10).map(q => ({ time: q.time_utc, magnitude: Number(q.magnitude), depthKm: Number(q.depth_km) }))
     },
     evidenceAttribution: [
       'HydroRIVERS v1.0: Lehner & Grill (2013)',

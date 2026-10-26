@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>River Eyes — Global Hydrological Intelligence & Dam Siting Platform</title>
+  <title>Earth Intelligence — River Intelligence Platform</title>
   <meta name="description" content="Global river monitoring, high-precision geospatial vector tracking, Gemma 4-powered Aqua assistant, and geotechnical energy-to-dam cascade siting." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
 
   <!-- Google Fonts: Inter, Outfit, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,8 @@
 
   <!-- Leaflet Map CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="../assets/icons.css" />
+  <script src="../assets/icons.js"></script>
 
   <style>
     /* =========================================================================
@@ -744,7 +746,7 @@
   <!-- Top Navigation Header (Open Center for Zero Master Toggle Overlap) -->
   <header>
     <div class="brand-section" onclick="switchRiver('ganga')">
-      <div class="brand-logo-badge">🌊</div>
+      <div class="brand-logo-badge"><span data-icon="river"></span></div>
       <div>
         <div class="brand-title">River Eyes <span style="font-size: 11px; font-weight: 500; color: #38bdf8;">v2.0</span></div>
         <div class="brand-subtitle">
@@ -765,12 +767,12 @@
       </div>
 
       <button class="btn btn-primary" onclick="openDamPlannerTab()">
-        <span>⚡</span>
+        <span data-icon="zap"></span>
         <span>Plan Dam Siting (MW)</span>
       </button>
 
       <button class="btn btn-aqua" onclick="toggleAqua(true)">
-        <span>✨</span>
+        <span data-icon="sparkles"></span>
         <span>Aqua (Gemma 4)</span>
       </button>
     </div>
@@ -782,7 +784,7 @@
     <nav class="sidebar-nav">
       <!-- SECTION 1: Location & Basin Input -->
       <div class="panel-section">
-        <h2 class="panel-section-title">📍 River Basin & Location Input</h2>
+        <h2 class="panel-section-title"><span data-icon="pin"></span> River Basin & Location Input</h2>
         <div class="input-group">
           <label class="input-label" for="world-river-select">Select Active Basin</label>
           <select id="world-river-select" class="select-dropdown" onchange="switchRiver(this.value)" style="width: 100%;">
@@ -813,14 +815,14 @@
 
       <!-- SECTION 2: City Power Planner — a city needs X MW: where should the dams go? -->
       <div class="panel-section" id="city-planner">
-        <h2 class="panel-section-title">⚡ City Power Planner</h2>
+        <h2 class="panel-section-title"><span data-icon="zap"></span> City Power Planner</h2>
         <div class="input-group">
           <label class="input-label" for="plan-city">City that needs electricity</label>
           <div style="display: flex; gap: 6px;">
             <input type="text" id="plan-city" class="panel-input" style="flex: 1;" value="Dehradun" placeholder="e.g. Dehradun, Shimla, Guwahati" />
-            <button class="btn" id="plan-city-go" type="button" style="padding: 0 12px;" title="Find city">🔍</button>
+            <button class="btn" id="plan-city-go" type="button" style="padding: 0 12px;" title="Find city"><span data-icon="search"></span></button>
           </div>
-          <div id="plan-city-found" style="font-size: 10px; color: var(--text-dim); margin-top: 4px;">📍 Dehradun, Uttarakhand, India (30.32, 78.03)</div>
+          <div id="plan-city-found" style="font-size: 10px; color: var(--text-dim); margin-top: 4px;"><span data-icon="pin"></span> Dehradun, Uttarakhand, India (30.32, 78.03)</div>
           <input type="hidden" id="target-lat" value="30.3165" />
           <input type="hidden" id="target-lon" value="78.0322" />
           <input type="hidden" id="target-location-name" value="Dehradun" />
@@ -863,41 +865,41 @@
 
       <!-- SECTION 2b: River Dam Atlas — every feasible dam site along one whole river -->
       <div class="panel-section" id="river-atlas">
-        <h2 class="panel-section-title">🗺️ River Dam Atlas</h2>
+        <h2 class="panel-section-title"><span data-icon="layers"></span> River Dam Atlas</h2>
         <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 8px;">Find every feasible dam site along a whole river, source to mouth.</p>
         <button class="btn btn-primary btn-run-analysis" onclick="runRiverAtlas('selected')">
           <span id="atlas-selected-label">Scan the selected river</span>
         </button>
-        <button class="btn" id="pick-river-btn" style="width: 100%; justify-content: center; margin-top: 6px; font-size: 12px; border-color: rgba(253,224,71,.5);" onclick="setPickMode(!pickMode)">🖱️ Pick a river on the map</button>
-        <div id="pick-river-hint" style="display: none; font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.45;">Move the cursor over a river: its whole length lights up. Click it to find every dam site along it. Esc cancels.</div>
+        <button class="btn" id="pick-river-btn" style="width: 100%; justify-content: center; margin-top: 6px; font-size: 12px; border-color: rgba(253,224,71,.5);" onclick="setPickMode(!pickMode)"><span data-icon="crosshair"></span> Pick river on map</button>
+        <div id="pick-river-hint" style="display: none; font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.45;">Move cursor over river to highlight main stem. Click to analyze dam sites along it.</div>
       </div>
 
       <!-- SECTION 3: Basin Telemetry & Real-Time Metrics -->
       <div class="panel-section">
-        <h2 class="panel-section-title">📊 Basin Telemetry & Real-Time Metrics</h2>
+        <h2 class="panel-section-title"><span data-icon="chart"></span> Basin Telemetry & Real-Time Metrics</h2>
         <div class="telemetry-grid">
           <div class="hud-card">
-            <div class="hud-card-label">📏 Length</div>
+            <div class="hud-card-label"><span data-icon="activity"></span> Length</div>
             <div class="hud-card-val" id="hud-length">2,525 km</div>
           </div>
           <div class="hud-card">
-            <div class="hud-card-label">🌊 Discharge</div>
+            <div class="hud-card-label"><span data-icon="river"></span> Discharge</div>
             <div class="hud-card-val" id="hud-discharge">16,650 m³/s</div>
           </div>
           <div class="hud-card">
-            <div class="hud-card-label">🌐 Catchment</div>
+            <div class="hud-card-label"><span data-icon="globe"></span> Catchment</div>
             <div class="hud-card-val" id="hud-catchment">861,452 km²</div>
           </div>
           <div class="hud-card">
-            <div class="hud-card-label">💧 Flow vs normal (site)</div>
+            <div class="hud-card-label"><span data-icon="droplet"></span> Flow vs Normal</div>
             <div class="hud-card-val" id="hud-health" style="color: #38bdf8;">…</div>
           </div>
           <div class="hud-card">
-            <div class="hud-card-label">🧱 Soil (site)</div>
+            <div class="hud-card-label"><span data-icon="layers"></span> Soil (Site)</div>
             <div class="hud-card-val" id="hud-bearing" style="color: #34d399;">…</div>
           </div>
           <div class="hud-card">
-            <div class="hud-card-label">⚠️ M5+ quakes ≤150 km</div>
+            <div class="hud-card-label"><span data-icon="hazard"></span> M5+ Quakes ≤150 km</div>
             <div class="hud-card-val" id="hud-seismic">…</div>
           </div>
         </div>
@@ -905,23 +907,23 @@
 
       <!-- SECTION 4: Hydrological Modules -->
       <div class="panel-section">
-        <h2 class="panel-section-title">🧭 Hydrological Modules</h2>
+        <h2 class="panel-section-title"><span data-icon="compass"></span> Hydrological Modules</h2>
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <div class="nav-item active" id="nav-overview" onclick="switchTab('overview')">
-            <span>🗺️</span>
+            <span data-icon="layers"></span>
             <span>Overview & Telemetry</span>
           </div>
           <div class="nav-item" id="nav-dam-planner" onclick="switchTab('dam-planner')">
-            <span>⚡</span>
+            <span data-icon="zap"></span>
             <span>Energy Dam Siting</span>
             <span class="nav-badge-pill">NEW</span>
           </div>
           <div class="nav-item" id="nav-geotech" onclick="switchTab('geotech')">
-            <span>🧪</span>
+            <span data-icon="activity"></span>
             <span>Site Conditions</span>
           </div>
           <div class="nav-item" id="nav-water" onclick="switchTab('water')" title="Turbidity and chlorophyll of a river or lake from recent Sentinel-2 satellite images">
-            <span>💧</span>
+            <span data-icon="droplet"></span>
             <span>Water Quality (Sentinel-2)</span>
           </div>
         </div>
@@ -937,12 +939,12 @@
 
         <!-- Aqua Assistant Pill (Like Treeko) -->
         <button type="button" class="aqua-pill" style="margin-top: 10px;" onclick="toggleAqua(true)" aria-label="Open Aqua assistant">
-          <span class="aqua-avatar" aria-hidden="true">🌊</span>
+          <span class="aqua-avatar" aria-hidden="true"><span data-icon="river"></span></span>
           <div class="aqua-text">
             <div class="aqua-name">Aqua</div>
             <div class="aqua-desc">Gemma 4 Hydrology Assistant</div>
           </div>
-          <span class="aqua-sparkle">✨</span>
+          <span class="aqua-sparkle"><span data-icon="sparkles"></span></span>
         </button>
       </div>
     </nav>
@@ -957,7 +959,7 @@
         <div class="view-panel" id="dam-planner-panel" style="display: none;">
           <div class="panel-header">
             <div class="panel-title">
-              <span>⚡</span>
+              <span data-icon="zap"></span>
               <span id="dam-panel-title">Dam Site Plan</span>
             </div>
             <button class="btn" style="padding: 2px 6px;" onclick="closePanel('dam-planner-panel')">✕</button>
@@ -972,7 +974,7 @@
         <div class="view-panel" id="water-panel" style="display: none;">
           <div class="panel-header">
             <div class="panel-title">
-              <span>💧</span>
+              <span data-icon="droplet"></span>
               <span>Water Quality (Sentinel-2)</span>
             </div>
             <button class="btn" style="padding: 2px 6px;" onclick="closePanel('water-panel')">✕</button>
@@ -989,7 +991,7 @@
         <div class="view-panel" id="geotech-panel" style="display: none;">
           <div class="panel-header">
             <div class="panel-title">
-              <span>🧪</span>
+              <span data-icon="activity"></span>
               <span>Site Conditions: Soil, Earthquakes, Flow</span>
             </div>
             <button class="btn" style="padding: 2px 6px;" onclick="closePanel('geotech-panel')">✕</button>
@@ -1020,23 +1022,23 @@
 
       <div class="analyser-step-list" id="analyser-step-list">
         <div class="analyser-step active" id="step-1">
-          <span>⏳</span>
+          <span data-icon="radar"></span>
           <span>[Stage 1/5] Snapping to the nearest major river (HydroRIVERS, HydroSHEDS)...</span>
         </div>
         <div class="analyser-step" id="step-2">
-          <span>⚪</span>
+          <span data-icon="river"></span>
           <span>[Stage 2/5] Following ~120 km of the main channel up- and downstream...</span>
         </div>
         <div class="analyser-step" id="step-3">
-          <span>⚪</span>
+          <span data-icon="mountain"></span>
           <span>[Stage 3/5] Sampling river-bed and valley-wall elevations (Copernicus DEM 90 m)...</span>
         </div>
         <div class="analyser-step" id="step-4">
-          <span>⚪</span>
+          <span data-icon="zap"></span>
           <span>[Stage 4/5] Computing head H, flow Q and power P = &eta;&middot;&rho;&middot;g&middot;Q&middot;H for every ~6 km diversion...</span>
         </div>
         <div class="analyser-step" id="step-5">
-          <span>⚪</span>
+          <span data-icon="check"></span>
           <span>[Stage 5/5] Ranking sites and choosing non-overlapping schemes for the target...</span>
         </div>
       </div>
@@ -1054,7 +1056,7 @@
   <aside id="aqua-drawer">
     <div class="drawer-header">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <div style="width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, #06b6d4, #2563eb); display: flex; align-items: center; justify-content: center; font-size: 14px;">✨</div>
+        <div style="width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, #06b6d4, #2563eb); display: flex; align-items: center; justify-content: center; font-size: 14px;"><span data-icon="sparkles"></span></div>
         <div>
           <div style="font-size: 13px; font-weight: 700; color: #ffffff;">Aqua Assistant</div>
           <div style="font-size: 10px; color: #38bdf8; font-family: var(--font-mono);">Gemma 4 · Hydrology Assistant</div>
@@ -1065,16 +1067,16 @@
 
     <!-- Quick Query Suggestions -->
     <div class="quick-pill-strip">
-      <div class="quick-pill" onclick="sendAquaPrompt('Plan an optimal dam cascade for 800 MW electricity in Garhwal valley')">⚡ 800 MW Dam Plan</div>
-      <div class="quick-pill" onclick="sendAquaPrompt('What soil and foundation investigations are needed before building a weir on the active river?')">🧪 Site Investigation</div>
-      <div class="quick-pill" onclick="sendAquaPrompt('Explain CPCB water quality parameters and DO/BOD standards')">💧 Water Quality WQI</div>
-      <div class="quick-pill" onclick="sendAquaPrompt('How should earthquake history affect hydropower site selection on the active river?')">🚨 Seismic Risk</div>
+      <div class="quick-pill" onclick="sendAquaPrompt('Plan an optimal dam cascade for 800 MW electricity in Garhwal valley')">800 MW Dam Plan</div>
+      <div class="quick-pill" onclick="sendAquaPrompt('What soil and foundation investigations are needed before building a weir on the active river?')">Site Investigation</div>
+      <div class="quick-pill" onclick="sendAquaPrompt('Explain CPCB water quality parameters and DO/BOD standards')">Water Quality WQI</div>
+      <div class="quick-pill" onclick="sendAquaPrompt('How should earthquake history affect hydropower site selection on the active river?')">Seismic Risk Assessment</div>
     </div>
 
     <!-- Messages Container -->
     <div class="drawer-messages" id="aqua-messages">
       <div class="chat-bubble aqua">
-        <h3>🌊 Welcome to Aqua Terminal</h3>
+        <h3><span data-icon="river"></span> Welcome to Aqua Terminal</h3>
         I am <strong>Aqua</strong>, your Gemma 4-powered River Eyes hydrology assistant. Ask about:
         <ul style="margin-left: 16px; margin-top: 6px;">
           <li>Target power capacity to dam sizing ($P = \eta \cdot \rho \cdot g \cdot Q \cdot H$)</li>
@@ -1628,14 +1630,14 @@
           <div style="font-size: 11px; color: var(--text-muted);">${d.river ? `Snapped to river ${d.river.distanceFromClickKm} km away · ${fmt(d.river.distanceToMouthKm, ' km')} to the sea` : 'No major river within 30 km'}</div>
         </div>
 
-        <strong style="color:#fff;font-size:11px;">🌊 River flow</strong>
+        <strong style="color:#fff;font-size:11px;"><span data-icon="river"></span> River flow</strong>
         <table style="width:100%;font-size:12px;margin:4px 0 12px;">
           ${row('Long-term mean (HydroRIVERS)', fmt(d.river?.meanDischargeCms, ' m³/s'))}
           ${f && f.matchQuality === 'poor' ? row('GloFAS forecast', 'uncertain: its ~5 km grid cell here may be a side stream') : ''}
           ${f ? row('Today (GloFAS)', `${fmt(f.todayCms, ' m³/s')} · ${fmt(f.percentOfNormal, '%')} of normal for the season`) + row('14-day forecast peak', `${fmt(f.forecastPeakCms, ' m³/s')} (${fmt(f.peakVs2yrFlood)}× 2-yr flood)`) : row('GloFAS forecast', 'unavailable')}
         </table>
 
-        <strong style="color:#fff;font-size:11px;">🧱 Soil, top 30 cm (SoilGrids)</strong>
+        <strong style="color:#fff;font-size:11px;"><span data-icon="layers"></span> Soil, top 30 cm (SoilGrids)</strong>
         <table style="width:100%;font-size:12px;margin:4px 0 12px;">
           ${s?.hasData ? `
             ${s.textureClass ? row('Texture (USDA)', escapeHtml(s.textureClass)) : ''}
@@ -1649,7 +1651,7 @@
           : row('Soil data', 'none at this point (water, rock, ice or urban)')}
         </table>
 
-        <strong style="color:#fff;font-size:11px;">⚠️ Earthquakes M5+ within 150 km since 1970 (USGS)</strong>
+        <strong style="color:#fff;font-size:11px;"><span data-icon="hazard"></span> Earthquakes M5+ within 150 km since 1970 (USGS)</strong>
         ${q ? `<div style="font-size:12px;color:var(--text-muted);margin:4px 0;">${q.count} events. Strongest:</div>
           <ul style="margin:0 0 12px;padding-left:16px;font-size:11px;color:var(--text-muted);">${q.strongest.map(e => `<li><b style="color:#fff;">M${e.magnitude}</b> ${escapeHtml(e.place)} (${e.date})</li>`).join('')}</ul>`
           : '<div style="font-size:12px;color:var(--text-muted);margin:4px 0 12px;">Unavailable right now.</div>'}
@@ -1671,8 +1673,9 @@
     function showWaterSelection() {
       const el = document.getElementById('water-selected');
       if (el) el.innerHTML = selectedSite
-        ? `📍 <b>${escapeHtml(selectedSite.label)}</b>${/-?\d+\.\d+,\s*-?\d+\.\d+/.test(selectedSite.label) ? '' : ` (${selectedSite.lat.toFixed(3)}, ${selectedSite.lon.toFixed(3)})`}<br/><span style="color:var(--text-dim)">Click any river or lake on the map to choose another place.</span>`
+        ? `<span data-icon="pin"></span> <b>${escapeHtml(selectedSite.label)}</b>${/-?\d+\.\d+,\s*-?\d+\.\d+/.test(selectedSite.label) ? '' : ` (${selectedSite.lat.toFixed(3)}, ${selectedSite.lon.toFixed(3)})`}<br/><span style="color:var(--text-dim)">Click any river or lake on the map to choose another place.</span>`
         : 'Click a river or lake on the map first.';
+      if (window.EarthIcons) window.EarthIcons.renderAll(el);
     }
 
     async function runWaterQuality() {
@@ -1680,7 +1683,8 @@
       const out = document.getElementById('water-results');
       const btn = document.getElementById('water-run');
       btn.disabled = true;
-      out.innerHTML = `<div style="font-size:12px;color:var(--text-muted);padding:8px 0;">🛰️ Finding the newest cloud-free Sentinel-2 images and measuring the water… (~20–40 s)</div>`;
+      out.innerHTML = `<div style="font-size:12px;color:var(--text-muted);padding:8px 0;"><span data-icon="satellite"></span> Measuring Sentinel-2 water spectral indices… (~20–40 s)</div>`;
+      if (window.EarthIcons) window.EarthIcons.renderAll(out);
       let r, error;
       try {
         const res = await fetch('/api/v1/water-quality', {
@@ -1765,7 +1769,8 @@
       pickMode = on;
       document.getElementById('map-container').classList.toggle('picking-river', on);
       const btn = document.getElementById('pick-river-btn');
-      if (btn) btn.innerHTML = on ? '✖ Cancel picking (Esc)' : '🖱️ Pick a river on the map';
+      if (btn) btn.innerHTML = on ? 'Cancel (Esc)' : '<span data-icon="crosshair"></span> Pick river on map';
+      if (window.EarthIcons) window.EarthIcons.renderAll(btn);
       document.getElementById('pick-river-hint').style.display = on ? 'block' : 'none';
       if (!on) clearPickHighlight();
     }
